@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+
   root 'main#index'
   get 'main/index'
+  get 'sessions/new'
 
+  resources :sessions
   resources :tasks
   resources :quests
   resources :users
