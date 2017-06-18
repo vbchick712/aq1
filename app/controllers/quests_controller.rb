@@ -1,6 +1,6 @@
 class QuestsController < ApplicationController
   before_action :set_quest, only: [:show, :edit, :update, :destroy]
-  befor_action :require_logged_in
+  before_action :require_logged_in
   # GET /quests
   # GET /quests.json
   def index
