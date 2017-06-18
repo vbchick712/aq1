@@ -1,21 +1,21 @@
 class QuestsController < ApplicationController
   before_action :set_quest, only: [:show, :edit, :update, :destroy]
-
+  befor_action :require_logged_in
   # GET /quests
   # GET /quests.json
   def index
-    @quests = Quest.all
+    @quests = current_user.quests.all
   end
 
   # GET /quests/1
   # GET /quests/1.json
   def show
-      # @quest = Quest.where(user_id: params[:id])
+      # @quest = current_user.quests.where(user_id: params[:id])
   end
 
   # GET /quests/new
   def new
-    @quest = Quest.new
+    @quest = current_user.quests.new
   end
 
   # GET /quests/1/edit
@@ -25,7 +25,7 @@ class QuestsController < ApplicationController
   # POST /quests
   # POST /quests.json
   def create
-    @quest = Quest.new(quest_params)
+    @quest = current_user.quests.new(quest_params)
 
     respond_to do |format|
       if @quest.save
@@ -65,11 +65,11 @@ class QuestsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quest
-      @quest = Quest.find(params[:id])
+      @quest = current_user.quests.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quest_params
-      params.fetch(:quest).permit(:name, :description, :start, :invite_msg, :start_msg, :final_msg)
+      params.require(:quest).permit(:name, :description, :start, :invite_msg, :start_msg, :final_msg)
     end
 end
