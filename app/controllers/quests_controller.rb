@@ -10,6 +10,7 @@ class QuestsController < ApplicationController
   # GET /quests/1
   # GET /quests/1.json
   def show
+      # @quest = Quest.where(user_id: params[:id])
   end
 
   # GET /quests/new
@@ -28,7 +29,7 @@ class QuestsController < ApplicationController
 
     respond_to do |format|
       if @quest.save
-        format.html { redirect_to @quest, notice: 'Quest was successfully created.' }
+        format.html { redirect_to @task_new_path, notice: 'Quest was successfully created.' }
         format.json { render :show, status: :created, location: @quest }
       else
         format.html { render :new }
@@ -69,6 +70,6 @@ class QuestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quest_params
-      params.fetch(:quest, {})
+      params.fetch(:quest).permit(:name, :description, :start, :invite_msg, :start_msg, :final_msg)
     end
 end
