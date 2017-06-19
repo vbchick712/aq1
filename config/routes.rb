@@ -1,10 +1,13 @@
-Rails.application.routes.draw do
+	Rails.application.routes.draw do
 
   root 'main#index'
   get 'main/index'
   get 'sessions/new'
 
   get 'quests/show', to: 'quests#show'
+
+  delete 'logout' => 'sessions#destroy'
+  get 'logout' => 'sessions#destroy'
 
   resources :sessions
   resources :tasks
