@@ -1,4 +1,29 @@
 <p id="notice"><%= notice %></p>
 
+<p>Quest Name: <%= @task.quest.name %></p>
+<p></p>
+<p>Task name: <%= @task.name %></p>
+<p></p>
+<p>Task: <%= @task.description %></p>
+<p></p>
+<p>Clue 1: <%= @task.clue1 %></p>
+<p></p>
+<p>Clue 2: <%= @task.clue2 %></p>
+<p></p>
+<p>Clue 3: <%= @task.clue2 %></p>
+<p></p>
+<p>Clue Timer: <%= @task.clue_timer %></p>
+<p></p>
+<p>Answer: <%= @task.answer %></p>
+<p></p>
+<p>Insert checkbox to confirm if answer must be exact</p>
+<p></p>
+<p>Correct Answer Comment: <%= @task.answer_comment %></p>
+<p></p>
+<p>Skip Task Comment: <%= @task.skip_comment %></p>
+<p></p>
+
+<p>The 'Add Task' link is broken</p>
+<%= link_to 'Add Task', new_task_path %> |
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

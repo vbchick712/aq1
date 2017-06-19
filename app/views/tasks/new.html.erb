@@ -1,5 +1,61 @@
-<h1>New Task</h1>
+<h1> Task</h1>
+<%= form_for @task do |f| %>
 
-<%= render 'form', task: @task %>
+<p><strong> [insert code to show quest name here]</strong></p>
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</p>
 
-<%= link_to 'Back', tasks_path %>
+	<p>
+		<%= f.label :description %>
+		<%= f.text_field :description %>
+	</p>
+
+  <p>
+		<%= f.label :clue1 %>
+		<%= f.text_field :clue1 %>
+	</p>
+
+  <p>
+    <%= f.label :clue2 %>
+    <%= f.text_field :clue2 %>
+  </p>
+
+  <p>
+    <%= f.label :clue3 %>
+    <%= f.text_field :clue3 %>
+  </p>
+
+	<p>
+		<%= f.label :clue_timer %> (minutes)
+		<%= f.number_field :clue_timer %> 
+	</p>
+
+  <p>
+		<%= f.label :answer %>
+		<%= f.text_field :answer %>
+	</p>
+
+  <p>[insert a checkbox here confirm if answer must be an exact match]</p>
+
+	<p>
+		<%= f.label :answer_comment %>
+		<%= f.text_field :answer_comment %>
+	</p>
+	<p>
+		<%= f.label :skip_comment %>
+		<%= f.text_field :skip_comment %>
+	</p>
+
+<p>There is a hidden field here that lists the quest_id, but idk how it works</p>
+	<p>
+		<%= f.text_field :quest_id %>
+	</p>
+
+	<p>The submit link doesn't go anywhere and this form doesn't assign a quest_id to this task</p>
+
+	<%= f.submit %>
+	</p>
+
+	<% end %>
