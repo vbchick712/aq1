@@ -4,17 +4,21 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = current_user.quests.find(params[:id]).tasks
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    @quest = Quest.find(params[:id])
+    @tasks = @quest.tasks#.find(params[:quest_id])
   end
 
   # GET /tasks/new
   def new
-    @task = Task.new#(:quest_id => params[:quest_id])
+    # @task = current_user.tasks.new#(:quest_id => params[:quest_id])
+    quest = current_user.quests.find(params[:format])
+    @task = quest.tasks.new
   end
 
   # GET /tasks/1/edit

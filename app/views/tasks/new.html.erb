@@ -1,7 +1,7 @@
 <h1> Task</h1>
 <%= form_for @task do |f| %>
 
-<p><strong>[insert code to show quest name here]</strong></p>
+<p><strong> [insert code to show quest name here]</strong></p>
 	<p>
 		<%= f.label :name %>
 		<%= f.text_field :name %>
@@ -28,8 +28,8 @@
   </p>
 
 	<p>
-		<%= f.label :clue_timer %>
-		<%= f.text_field :clue_timer %>
+		<%= f.label :clue_timer %> (minutes)
+		<%= f.number_field :clue_timer %> 
 	</p>
 
   <p>
@@ -50,7 +50,7 @@
 
 <p>There is a hidden field here that lists the quest_id, but idk how it works</p>
 	<p>
-		<%= f.hidden_field :quest_id %>
+		<%= f.text_field :quest_id %>
 	</p>
 
 	<p>The submit link doesn't go anywhere and this form doesn't assign a quest_id to this task</p>

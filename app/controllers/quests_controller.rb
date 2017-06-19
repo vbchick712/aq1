@@ -11,6 +11,8 @@ class QuestsController < ApplicationController
   # GET /quests/1.json
   def show
       # @quest = current_user.quests.where(user_id: params[:id])
+      @quest = Quest.find(params[:id])
+      @tasks = @quest.tasks
   end
 
   # GET /quests/new

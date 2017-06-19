@@ -2,9 +2,9 @@
 
 <p>Quest Name: <%= @quest.name %></p>
 <p></p>
-<p>Quest Date: [insert start date code here]</p>
+<p>Quest Date: <%= @quest.start.strftime("%Y-%m-%d")%> </p>
 <p></p>
-<p>Quest Time: [insert start time code here]</p>
+<p>Quest Time: <%= @quest.start.strftime("%l:%M:%S %P")%></p>
 <p></p>
 <p>Invite Message: <%= @quest.invite_msg %></p>
 <p></p>
@@ -16,6 +16,6 @@
 <p></p>
 
 <p>The 'Add Task' link does not pull quest_id with it</p>
-<%= link_to 'Add Task', new_task_path %> |
+<%= link_to 'Add Task', new_task_path(@quest) %> |
 <%= link_to 'Edit', edit_quest_path(@quest) %> |
 <%= link_to 'Back', quests_path %>
