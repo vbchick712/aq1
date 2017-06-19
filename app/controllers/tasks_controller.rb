@@ -4,14 +4,14 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = current_user.quests.find(params[:id]).tasks
+    @tasks = current_user.quests.find(params[:format]).tasks
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
   def show
-    @quest = Quest.find(params[:id])
-    @tasks = @quest.tasks#.find(params[:quest_id])
+    @task = Task.find(params[:id])
+    # @tasks = @quest.tasks#.find(params[:quest_id])
   end
 
   # GET /tasks/new

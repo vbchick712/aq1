@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   	 return render action: 'new' unless @user
 
   	 session[:user_id] = @user.id
-  	 redirect_to quests_path
+  	 redirect_to users_path
   	end
 
 # Shannan Comment: we need this to logout
