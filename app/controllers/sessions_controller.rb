@@ -9,4 +9,9 @@ class SessionsController < ApplicationController
   	 session[:user_id] = @user.id
   	 redirect_to quests_path
   	end
+
+# Shannan Comment: we need this to logout
+  # def destroy
+  # end
+
 end

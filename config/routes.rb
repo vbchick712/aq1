@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'main/index'
   get 'sessions/new'
 
+  get 'quests/show', to: 'quests#show'
+
   resources :sessions
   resources :tasks
   resources :quests

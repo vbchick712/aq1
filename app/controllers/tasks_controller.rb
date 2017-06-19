@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = current_user.tasks.all
+    @tasks = Task.all
   end
 
   # GET /tasks/1
@@ -14,7 +14,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
-    @task = current_user.tasks.new
+    @task = Task.new#(:quest_id => params[:quest_id])
   end
 
   # GET /tasks/1/edit
@@ -24,7 +24,9 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    @task = current_user.tasks.new(task_params)
+    # Shannan Comment: This is sample code from Stack OVerflow to set the quest_id with the task
+    # @task = Task.new(task_params).merge(:quest_id => @quest.id)
+    @task = Task.new(task_params)
 
     respond_to do |format|
       if @task.save
@@ -64,11 +66,11 @@ class TasksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
-      @task = current_user.tasks.find(params[:id])
+      @task = Task.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :description)
+      params.require(:task).permit(:name, :description, :clue1, :clue2, :clue3, :answer, :answer_comment, :skip_comment)
     end
 end

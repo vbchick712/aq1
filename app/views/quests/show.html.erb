@@ -1,4 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+<p>Quest Name: <%= @quest.name %></p>
+<p></p>
+<p>Quest Date: [insert start date code here]</p>
+<p></p>
+<p>Quest Time: [insert start time code here]</p>
+<p></p>
+<p>Invite Message: <%= @quest.invite_msg %></p>
+<p></p>
+<p>Start Message: <%= @quest.start_msg %></p>
+<p></p>
+<p>Final Message: <%= @quest.final_msg %></p>
+<p></p>
+<p>Participants: [insert link to add names here]</p>
+<p></p>
+
+<p>The 'Add Task' link does not pull quest_id with it</p>
+<%= link_to 'Add Task', new_task_path %> |
 <%= link_to 'Edit', edit_quest_path(@quest) %> |
 <%= link_to 'Back', quests_path %>
