@@ -1,25 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<h1>Welcome to Amazing Quest!</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= link_to 'New Quest', new_quest_path %>
+<%= link_to 'View a Quest', quest_path %>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+<!-- Shannan Comment: I have no idea if this ruby code will work, but I'm adding it to give us a starting point -->
+<!-- Shannan Comment: We need to figure out how to output a number and make that number link to a page that will show the list of quests that are scoped here -->
+<p><strong>Quests I've Created: </strong><a #{"<%= @user.quests.find(:user_id).count %>"}></p>
 
-<%= link_to 'New User', new_user_path %>
+<!-- Shannan Comment: We need to figure out how to output a number and make that number link to a page that will show the list of quests that are scoped here -->
+<p><strong>Quests I've Completed: </strong><%= @user.quests.find(:quest_id).tasks.where(:complete==true)  %></p>
+<p><strong>Quests In Progress: </strong></p>
+
+<!-- Shannan Comment: Feel free to delete these if we don't need them for our demo -->
+<p>These are optional links. Keeping just to save the wording</p>
+<%= link_to 'Edit User Profile', edit_user_path(user) %>
+<%= link_to 'Delete Account', user, method: :delete, date: { confirm: 'Are you sure?' } %>
+
+<% end %>
