@@ -15,7 +15,7 @@
 <p>Participants: [insert link to add names here]</p>
 <p></p>
 
-<p>The 'Add Task' link does not pull quest_id with it</p>
 <%= link_to 'Add Task', new_task_path(@quest) %> |
 <%= link_to 'Edit', edit_quest_path(@quest) %> |
+<%= link_to 'Invite Participants', invite_user_path(@quest)  %>
 <%= link_to 'Back', quests_path %>

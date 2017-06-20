@@ -23,7 +23,7 @@ class QuestsController < ApplicationController
   # GET /quests/1/edit
   def edit
   end
-
+  
   # POST /quests
   # POST /quests.json
   def create
