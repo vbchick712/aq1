@@ -12,10 +12,14 @@
 <p></p>
 <p>Final Message: <%= @quest.final_msg %></p>
 <p></p>
-<p>Participants: [insert link to add names here]</p>
+<p>Total Tasks: <%= @quest.tasks.count %></p>
+<p></p>
+<p>Participants: </p>
+<p>[Consider adding a status code of "confirmed" or "pending acceptance"]</p>
 <p></p>
 
+<p>Add a link to invite quest participants</p>
 <%= link_to 'Add Task', new_task_path(@quest) %> |
-<%= link_to 'Edit', edit_quest_path(@quest) %> |
-<%= link_to 'Invite Participants', invite_user_path(@quest)  %>
-<%= link_to 'Back', quests_path %>
+<%= link_to 'Edit Tasks', task_path(@quest) %> |
+<%= link_to 'Edit Quest', edit_quest_path(@quest) %> |
+<%= link_to 'Quest Home', quests_path %>
