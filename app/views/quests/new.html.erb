@@ -7,29 +7,29 @@
         <%= f.text_field :name,{class: 'validate'} %>
         <%= f.label :name %>
     </div>
-	<p>
+	<div class="input-field col s6">
 		<%= f.label :start %>
 		<%= f.date_field :start,{class: 'datepicker'} %>
-	</p>
+	</div>
 
-	<p>
+	<div class="input-field col s6">
 		<%= f.label :description %>
 		<%= f.text_field :description %>
-	</p>
-	<p>
+	</div>
+	<div class="input-field col s6">
 		<%= f.label :invite_msg %>
 		<%= f.text_field :invite_msg %>
-	</p>
-	<p>
+	</div>
+	<div class="input-field col s6">
 		<%= f.label :start_msg %>
 		<%= f.text_field :start_msg %>
-	</p>
-	<p>
+	</div>
+	<div class="input-field col s6">
 		<%= f.label :final_msg %>
 		<%= f.text_field :final_msg %>
-	</p>
+	</div>
 
 	<%= f.submit %>
-	</p>
+	</div>
 
 	<% end %>

@@ -1,61 +1,62 @@
-<h1> Task</h1>
+<h3><%= @task.quest.name%></h3>
+<h4> Task</h4>
 <%= form_for @task do |f| %>
 
-<p><strong> [insert code to show quest name here]</strong></p>
-	<p>
+
+	<div class = "input-field col s6">
 		<%= f.label :name %>
 		<%= f.text_field :name %>
-	</p>
+	</div>
 
-	<p>
+	<div class = "input-field col s6">
 		<%= f.label :description %>
 		<%= f.text_field :description %>
-	</p>
+	</div>
 
-  <p>
+  <div class = "input-field col s6">
 		<%= f.label :clue1 %>
 		<%= f.text_field :clue1 %>
-	</p>
+	</div>
 
-  <p>
+  <div class = "input-field col s6">
     <%= f.label :clue2 %>
     <%= f.text_field :clue2 %>
-  </p>
+  </div>
 
-  <p>
+  <div class = "input-field col s6">
     <%= f.label :clue3 %>
     <%= f.text_field :clue3 %>
-  </p>
+  </div>
 
-	<p>
-		<%= f.label :clue_timer %> (minutes)
+	<div class = "input-field col s6">
+		<%= f.label :clue_timer, "Timer (minutes)" %> 
 		<%= f.number_field :clue_timer %> 
-	</p>
+	</div>
 
-  <p>
+  <div class = "input-field col s6">
 		<%= f.label :answer %>
 		<%= f.text_field :answer %>
-	</p>
+	</div>
 
-  <p>[insert a checkbox here confirm if answer must be an exact match]</p>
+  <div class = "input-field col s6">[insert a checkbox here confirm if answer must be an exact match]</div>
 
-	<p>
+	<div class = "input-field col s6">
 		<%= f.label :answer_comment %>
 		<%= f.text_field :answer_comment %>
-	</p>
-	<p>
+	</div>
+	<div class = "input-field col s6">
 		<%= f.label :skip_comment %>
 		<%= f.text_field :skip_comment %>
-	</p>
+	</div>
 
-<p>There is a hidden field here that lists the quest_id, but idk how it works</p>
-	<p>
-		<%= f.text_field :quest_id %>
-	</p>
+<div class = "input-field col s6">There is a hidden field here that lists the quest_id, but idk how it works</div>
+	<div class = "input-field col s6">
+		<%= f.hidden_field :quest_id %>
+	</div>
 
-	<p>The submit link doesn't go anywhere and this form doesn't assign a quest_id to this task</p>
+	<div class = "input-field col s6">The submit link doesn't go anywhere and this form doesn't assign a quest_id to this task</div>
 
 	<%= f.submit %>
-	</p>
+	</div>
 
 	<% end %>
