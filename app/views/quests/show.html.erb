@@ -18,7 +18,7 @@
 <p>[Consider adding a status code of "confirmed" or "pending acceptance"]</p>
 <p></p>
 
-<p>Add a link to invite quest participants</p>
+<%= link_to 'Add Participant', users_invite_path(@quest) %> |
 <%= link_to 'Add Task', new_task_path(@quest) %> |
 <%= link_to 'Edit Tasks', task_path(@quest) %> |
 <%= link_to 'Edit Quest', edit_quest_path(@quest) %> |

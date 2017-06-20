@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_logged_in
+  # before_action :require_logged_in
   # GET /users
   # GET /users.json
   def index
@@ -36,6 +36,24 @@ class UsersController < ApplicationController
       end
     end
   end
+
+
+# WE NEED HELP WITH THIS METHOD!!!!
+##################################################################################
+  def invite
+    # send mailer with link to invite the user to register for the quest
+      unless User.find_by(email: params[:email])
+        @user = User.new(email: params[:email])
+        @role = Role.create(quest_id: (params[:quest_id]), user_id: (params[:user_id]))
+
+      else
+        # the user is in the User Table already, just add them to the role table for that quest
+        @role = Role.create(quest_id: (params[:quest_id]), user_id: (params[:user_id]))
+      end
+      UserMailer.invite_email(@user).deliver_now
+      format.html { redirect_to quests_path, notice: 'User was successfully invited.' }
+    end
+
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json

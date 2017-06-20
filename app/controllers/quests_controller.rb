@@ -18,7 +18,7 @@ class QuestsController < ApplicationController
   # GET /quests/new
   def new
     @quest = current_user.quests.new(:user_id => params[:user_id])
-    @role = current_user.roles.new#(:user_id => params[:user_id])
+    @role = current_user.roles.new
   end
 
   # GET /quests/1/edit
