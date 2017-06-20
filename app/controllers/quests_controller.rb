@@ -18,12 +18,13 @@ class QuestsController < ApplicationController
   # GET /quests/new
   def new
     @quest = current_user.quests.new(:user_id => params[:user_id])
+    @role = current_user.roles.new#(:user_id => params[:user_id])
   end
 
   # GET /quests/1/edit
   def edit
   end
-  
+
   # POST /quests
   # POST /quests.json
   def create
@@ -31,6 +32,9 @@ class QuestsController < ApplicationController
 
     respond_to do |format|
       if @quest.save
+      current_user.roles.create(quest_id: @quest.id, role: true)
+
+
         format.html { redirect_to @quest, notice: 'Quest was successfully created.' }
         format.json { render :show, status: :created, location: @quest }
       else
