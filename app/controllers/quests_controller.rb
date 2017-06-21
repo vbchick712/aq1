@@ -4,7 +4,7 @@ class QuestsController < ApplicationController
   # GET /quests
   # GET /quests.json
   def index
-
+    
     quests_true = current_user.roles.select do |r|
       r.role == true
     end

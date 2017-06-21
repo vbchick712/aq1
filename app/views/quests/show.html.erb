@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <h4><%= @quest.name %></h4>
+<h6><%= @quest.user.name%></h6>
+<p>Quest Date: <%= @quest.start.strftime("%Y-%m-%d")%> </p>
 
-<div class="input-field col s6">Quest Date: <%= @quest.start.strftime("%Y-%m-%d")%> </div>
+<p>Quest Time: <%= @quest.start.strftime("%l:%M %P")%></p>
 
-<div class="input-field col s6">Quest Time: <%= @quest.start.strftime("%l:%M %P")%></div>
+<p>Invite Message: <%= @quest.invite_msg %></p>
 
-<div class="input-field col s6">Invite Message: <%= @quest.invite_msg %></div>
+<p>Start Message: <%= @quest.start_msg %></p>
 
-<div class="input-field col s6">Start Message: <%= @quest.start_msg %></div>
+<p>Final Message: <%= @quest.final_msg %></p>
 
-<div class="input-field col s6">Final Message: <%= @quest.final_msg %></div>
-
-<div class="input-field col s6">Total Tasks: <%= @quest.tasks.count %></div>
+<p>Total Tasks: <%= @quest.tasks.count %></p>
 <ul id="tabs-swipe-demo" class="tabs ">
 	<% @quest.tasks.each do |task| %>
 		<% id = "#test-swipe-" + task.id.to_s %>
