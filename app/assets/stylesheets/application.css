@@ -16,3 +16,6 @@
 /*body{
 	background-color: lightgray;
 }*/
+td, th {
+	padding: 15px 5px;
+}
