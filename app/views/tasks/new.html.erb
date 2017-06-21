@@ -1,7 +1,7 @@
 <h1> Task</h1>
 <%= form_for @task do |f| %>
 
-<p><strong> [insert code to show quest name here]</strong></p>
+<p><strong> <%= @task.quest.name %> </strong></p>
 	<p>
 		<%= f.label :name %>
 		<%= f.text_field :name %>
@@ -29,7 +29,7 @@
 
 	<p>
 		<%= f.label :clue_timer %> (minutes)
-		<%= f.number_field :clue_timer %> 
+		<%= f.number_field :clue_timer %>
 	</p>
 
   <p>

@@ -4,7 +4,18 @@ class QuestsController < ApplicationController
   # GET /quests
   # GET /quests.json
   def index
-    @quests = current_user.quests.all
+
+    quests_true = current_user.roles.select do |r|
+      r.role == true
+    end
+
+    quests_false = current_user.roles.select do |r|
+      r.role == false
+    end
+
+    @questmaster = quests_true.map {|q| q.quest}
+    @participant = quests_false.map {|q| q.quest}
+
   end
 
   # GET /quests/1
@@ -71,7 +82,7 @@ class QuestsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quest
-      @quest = current_user.quests.find(params[:id])
+      @quest = Quest.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

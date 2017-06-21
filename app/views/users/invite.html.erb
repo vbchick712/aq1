@@ -1,8 +1,8 @@
 <h1> Invite Participants</h1>
 
-<%= form_for @user do |f| %>
+<%= form_with url: quest_path(params[:format]), method: :get do |f| %>
 
-  <%= f.hidden_field :quest_id, :value => @user.quest_id %>
+  <%= f.hidden_field :quest_id, value: @user %>
 
   <p>
 		<%= f.label :name %>
