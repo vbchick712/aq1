@@ -39,7 +39,7 @@
 	<p>Skip Task Comment: <%= task.skip_comment %></p>
 	<p></p>
 	<div class="collection">
-		<%= link_to 'Edit Tasks', task_path(task.id), class:'collection-item' %>
+		<%= link_to 'Edit Tasks', edit_task_path(task.id), class:'collection-item' %>
 	</div>
 </div>
 <% end %>
