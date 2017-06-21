@@ -11,7 +11,12 @@
 		<%= f.label :start %>
 		<%= f.date_field :start,{class: 'datepicker'} %>
 	</div>
-
+	<div class="input-field col s6">
+		
+		<%= f.time_field :start, :ignore_date => true %>
+		
+	</div>
+	
 	<div class="input-field col s6">
 		<%= f.label :description %>
 		<%= f.text_field :description %>
@@ -29,7 +34,7 @@
 		<%= f.text_field :final_msg %>
 	</div>
 
-	<%= f.submit %>
+	<%= f.submit class:'btn waves-effect waves-light'%>
 	</div>
 
 	<% end %>
