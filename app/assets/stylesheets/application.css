@@ -22,3 +22,9 @@ td, th {
 body{
 	font-family: Roboto;
 }
+.picker__date-display {
+	background-color: gray;
+}
+.picker__weekday-display {
+	background-color: #000000;
+}

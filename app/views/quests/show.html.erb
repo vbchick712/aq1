@@ -32,7 +32,7 @@
 	<p></p>
 	<p>Clue 3: <%= task.clue2 %></p>
 	<p></p>
-	<p>Clue Timer: <%= task.clue_timer %></p>
+	<p>Clue Timer: <%= task.clue_timer %> minutes</p>
 	<p></p>
 	<p>Answer: <%= task.answer %></p>
 	<p></p>
@@ -41,7 +41,7 @@
 	<p>Skip Task Comment: <%= task.skip_comment %></p>
 	<p></p>
 	<div class="collection">
-		<%= link_to 'Edit Tasks', edit_task_path(task.id), class:'collection-item' %>
+		<%= link_to 'Edit Tasks', edit_task_path(task.id), class:'collection-item black-text text-darken-2' %>
 	</div>
 </div>
 <% end %>
@@ -58,14 +58,15 @@
 				<i class="material-icons circle">perm_identity</i>
 			<% end %>
 			<h6><%= role.user.name %></h6>
+			<!-- <p><%= role.user.email %></p> -->
 			<p>Pending Acceptance</p>
 		</li>
 	<% end -%>	
 <% end -%>
 </ul>
 <div class="collection">
-<%= link_to 'Add Participant', users_invite_path(@quest), class:'collection-item'  %>
-<%= link_to 'Add Task', new_task_path(@quest), class:'collection-item' %>
-<%= link_to 'Edit Quest', edit_quest_path(@quest), class:'collection-item' %>
-<%= link_to 'Quest Home', quests_path, class:'collection-item' %>
+<%= link_to 'Add Participant', users_invite_path(@quest), class:'collection-item black-text text-darken-2'  %>
+<%= link_to 'Add Task', new_task_path(@quest), class:'collection-item black-text text-darken-2' %>
+<%= link_to 'Edit Quest', edit_quest_path(@quest), class:'collection-item black-text text-darken-2' %>
+<%= link_to 'Quest Home', quests_path, class:'collection-item black-text text-darken-2' %>
 </div>
