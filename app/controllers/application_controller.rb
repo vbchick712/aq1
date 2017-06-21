@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
   	return redirect_to root_path
 
   end
+
+# Adding an invite method here to prevent errors because I don't know where
+# this method should go to manage the mailers for inviting participants
+
 end

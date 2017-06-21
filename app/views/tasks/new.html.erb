@@ -1,9 +1,13 @@
 <h3><%= @task.quest.name%></h3>
 <h4> Task</h4>
 <%= form_for @task do |f| %>
-
+	
+	<p>
+		<strong> <%= @task.quest.name %> </strong>
+	</p>
 
 	<div class = "input-field col s6">
+
 		<%= f.label :name %>
 		<%= f.text_field :name %>
 	</div>

@@ -37,6 +37,22 @@ class UsersController < ApplicationController
     end
   end
 
+
+  def invite
+    # if user is not in the User table, then create a user and role with the quest_id
+    @user = User.find_by(email: params[:email])
+      unless @user
+        @user = User.new(email: params[:email])
+        @role = Role.create(quest_id: (params[:quest_id]), user_id: (params[:user_id]))
+      else
+        # the user is in the User table already, just add them to the role table for that quest
+        @role = Role.create(quest_id: (params[:quest_id]), user_id: (params[:user_id]))
+      end
+      # send everyone the invite_email for the quest they were invited to and notify the user it all worked
+      UserMailer.invite_email(@user).deliver_now
+      # format.html { redirect_to quests_path, notice: 'Participant was invited'}
+    end
+
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update

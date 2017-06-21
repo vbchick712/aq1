@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
- 
+
   def new
   end
 
@@ -19,8 +19,3 @@ class SessionsController < ApplicationController
 
 
   end
-
-# Shannan Comment: we need this to logout
-  # def destroy
-  # end
-  
