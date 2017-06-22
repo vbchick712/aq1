@@ -30,9 +30,5 @@ body{
 }
 .slider{
 	overflow: hidden;
-	z-index: 1;
-}
-.side-nav{
-	background-color: transparent;
-	box-shadow: none;
+	z-index: -1;
 }
