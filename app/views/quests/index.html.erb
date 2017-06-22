@@ -46,7 +46,7 @@
           <th></th>
         </tr>
       </thead>
-
+    <% x=0%>
     <% @participant.each do |quest| %>
       <tr>
         <td><%= quest.name %></td>
@@ -57,10 +57,16 @@
           <a class='dropdown-button btn' href='#' data-activates='dropdown2'>Options</a>
           <!-- Dropdown Structure -->
           <ul id='dropdown2' class='dropdown-content'>
-            <li><%= link_to 'Show', quest %></li>
+          <% if quest.start >= @time %>
+            <li><a href="">Not Available</a></li>
+          <% else %>
+            <li><%= link_to 'Start the Quest!', quest %></li>
+          <% end -%>
+            
           </ul>
           </td>
       </tr>
+      <% x+=1 %>
     <% end %>
   </tbody>
 </table>
