@@ -2,7 +2,7 @@
 
 <%= form_with url: quest_path(params[:format]), method: :get do |f| %>
 
-  <%= f.hidden_field :quest_id, value: @user %>
+  <% f.hidden_field :quest_id, value: params[:format] %>
 
   <div class="input-field col s6">
 		<%= f.label :name %>
@@ -12,6 +12,10 @@
 	<div class="input-field col s6">
 		<%= f.label :email %>
 		<%= f.text_field :email %>
+	</div>
+	<div class="input-field col s6">
+		
+		<%= f.password_field :password %>
 	</div>
 
 	<div class="input-field col s6">
