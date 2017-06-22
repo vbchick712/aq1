@@ -14,8 +14,11 @@
 <p></p>
 <p>Total Tasks: <%= @quest.tasks.count %></p>
 <p></p>
-<p>Participants: </p>
-<p>[Consider adding a status code of "confirmed" or "pending acceptance"]</p>
+<p>Participants: <% @participants.each do |n| %>
+                <br>  <%= n %>
+                  <% end %>
+
+</p>
 <p></p>
 
 <%= link_to 'Add Participant', users_invite_path(@quest) %> |

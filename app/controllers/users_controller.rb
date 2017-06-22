@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_logged_in, only:[:index,:invite]
+  # before_action :require_logged_in
   # GET /users
   # GET /users.json
   def index
@@ -50,6 +50,7 @@ class UsersController < ApplicationController
       end
       # send everyone the invite_email for the quest they were invited to and notify the user it all worked
       UserMailer.invite_email(@user).deliver_now
+      redirect_to root_path
       # format.html { redirect_to quests_path, notice: 'Participant was invited'}
     end
 

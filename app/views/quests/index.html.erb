@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Quests</h1>
+<h4>Quests I've Created:</h4>
 
 <table>
   <thead>
@@ -29,7 +29,15 @@
   </tbody>
   </table>
 
-<p>********************************</p>
+  <br>
+
+  <%= link_to 'Create a Quest', new_quest_path %>
+
+
+<p>*******************************************</p>
+
+<h4>Quests I'm Participating In:</h4>
+
     <table>
       <thead>
         <tr>
@@ -48,8 +56,8 @@
         <td><%= quest.start %></td>
         <td><%= quest.user_id %></td>
         <td><%= link_to 'Show', quest %></td>
-        <td><%= link_to 'Edit', edit_quest_path(quest) %></td>
-        <td><%= link_to 'Destroy', quest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- <td><%= link_to 'Edit', edit_quest_path(quest) %></td> -->
+        <!-- <td><%= link_to 'Destroy', quest, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -57,5 +65,4 @@
 
 <br>
 
-<%= link_to 'New Quest', new_quest_path %>
 <%= link_to 'Log Out', logout_path, method: "delete" %>

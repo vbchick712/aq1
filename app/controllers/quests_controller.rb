@@ -24,6 +24,19 @@ class QuestsController < ApplicationController
       # @quest = current_user.quests.where(user_id: params[:id])
       @quest = Quest.find(params[:id])
       @tasks = @quest.tasks
+
+# Testing how to pull User's Name as a Participant in a Quest
+      @quest_participants = Quest.find(params[:id]).roles.select do |r|
+        r.role == false
+      end
+
+      @participants = @quest_participants.map {|u| u.user.name}
+
+      # @participant_name = participants.each do |n|
+
+
+
+
   end
 
   # GET /quests/new
