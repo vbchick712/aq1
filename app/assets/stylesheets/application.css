@@ -22,12 +22,12 @@ td, th {
 body{
 	font-family: Roboto;
 }
-.picker__date-display {
+/*.picker__date-display {
 	background-color: gray;
 }
 .picker__weekday-display {
 	background-color: #000000;
-}
+}*/
 .slider{
 	overflow: hidden;
 	z-index: -1;
