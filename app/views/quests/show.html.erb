@@ -16,14 +16,17 @@
 
 <p>Total Tasks: <%= @quest.tasks.count %></p>
 <ul id="tabs-swipe-demo" class="tabs ">
+	<% x = 1%>
 	<% @quest.tasks.sort.each do |task| %>
 		<% id = "#test-swipe-" + task.id.to_s %>
-		<li class="tab col s3 "><a href=<%= id%> class="black-text text-darken-2"><%= task.name %></a></li>	
+		<li class="tab col s3 "><a href=<%= id%> class="black-text text-darken-2">Task <%= x%> </a></li>
+		<% x +=1 %>	
     <% end %>
 </ul>
 <% @quest.tasks.each do |task| %>
 <% id = 'test-swipe-' + task.id.to_s %>
 <div id=<%=id%> class="col s12 #f5f5f5 grey lighten-4">
+	<p><%= task.name %></p>
 	<p>Task: <%= task.description %></p>
 	<p></p>
 	<p>Clue 1: <%= task.clue1 %></p>
