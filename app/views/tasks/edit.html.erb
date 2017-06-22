@@ -1,5 +1,27 @@
 <h1>Editing Task</h1>
 
-<%= render 'form', task: @task %>
+<p>Quest Name: <%= @task.quest.name %></p>
+<p></p>
+<p>Task name: <%= @task.name %></p>
+<p></p>
+<p>Task: <%= @task.description %></p>
+<p></p>
+<p>Clue 1: <%= @task.clue1 %></p>
+<p></p>
+<p>Clue 2: <%= @task.clue2 %></p>
+<p></p>
+<p>Clue 3: <%= @task.clue2 %></p>
+<p></p>
+<p>Clue Timer: <%= @task.clue_timer %></p>
+<p></p>
+<p>Answer: <%= @task.answer %></p>
+<p></p>
+<p>Insert checkbox to confirm if answer must be exact</p>
+<p></p>
+<p>Correct Answer Comment: <%= @task.answer_comment %></p>
+<p></p>
+<p>Skip Task Comment: <%= @task.skip_comment %></p>
+<p></p>
 
-<%= link_to 'Show', @task %> |
+<%= link_to 'Show', quest_task_path(@task.quest, @task) %> |
+<%= link_to 'Return to Quest', quests_path(@quest) %>

@@ -1,4 +1,8 @@
+
+<h1>QUEST SHOW</h1>
+
 <p id="notice"><%= notice %></p>
+
 
 <p>Quest Name: <%= @quest.name %></p>
 <p></p>
@@ -21,8 +25,8 @@
 </p>
 <p></p>
 
-<%= link_to 'Add Participant', users_invite_path(@quest) %> |
-<%= link_to 'Add Task', new_task_path(@quest) %> |
-<%= link_to 'Edit Tasks', task_path(@quest) %> |
 <%= link_to 'Edit Quest', edit_quest_path(@quest) %> |
+<%= link_to 'All Tasks', quest_tasks_path(@quest) %> |
+<%= link_to 'Add Task', new_quest_task_path(@quest) %> |
+<%= link_to 'Add Participant', users_invite_path(@quest) %> |
 <%= link_to 'Quest Home', quests_path %>

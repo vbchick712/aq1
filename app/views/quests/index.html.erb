@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>QUEST HOME</h1>
+<p></p>
 <h4>Quests I've Created:</h4>
 
 <table>
@@ -23,7 +25,7 @@
         <!-- <td><%= quest.user_id %></td> -->
         <td><%= link_to 'Show', quest %></td>
         <td><%= link_to 'Edit', edit_quest_path(quest) %></td>
-        <td><%= link_to 'Destroy', quest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', quest, method: :delete, data: { confirm: 'Are you sure? Once you destroy a quest it is gone forever!' } %></td>
       </tr>
     <% end %>
   </tbody>

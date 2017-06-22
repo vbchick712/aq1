@@ -11,8 +11,9 @@
 	get 'users/invite'
 
   resources :sessions
-  resources :tasks
-  resources :quests
+  resources :quests do
+		resources :tasks
+  end
   resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+		
 end
