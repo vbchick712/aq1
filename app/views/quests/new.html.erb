@@ -1,6 +1,6 @@
 <% if @quest.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@quest.errors.count, "field") %> is required to create a Quest:</h2>
+      <p><%= pluralize(@quest.errors.count, "field") %> is required to create a Quest:</p>
 
       <ul>
       <% @quest.errors.full_messages.each do |message| %>
@@ -9,7 +9,8 @@
       </ul>
     </div>
   <% end %>
-<h1> Quest</h1>
+<h4>New Quest</h4>
+<%= link_to 'Back', quests_path, class:'right waves-effect waves-light btn' %>
 <%= form_for @quest do |f| %>
 
 	<div class="input-field col s6">
@@ -50,5 +51,5 @@
 	</div>
 
 	<% end %>
-
-	<%= link_to 'Log Out', logout_path, method: "delete" %>
+	
+	

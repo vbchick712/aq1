@@ -7,7 +7,12 @@
 
 	<div class="input-field col s6">
 		<%= f.label :start %>
-		<%= f.text_field :start %>
+		<%= f.date_field :start,{class: 'datepicker'} %>
+	</div>
+	<div class="field col s6">
+		<%= f.label :start, "HH:MM" %>
+		<%= f.time_field :start, :ignore_date => true %>
+		
 	</div>
 
 	<div class="input-field col s6">

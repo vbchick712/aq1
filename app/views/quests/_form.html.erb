@@ -1,11 +1,11 @@
 <%= form_with(model: quest, local: true) do |form| %>
   <% if quest.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(quest.errors.count, "error") %> prohibited this quest from being saved:</h2>
+    
+      <p><%= pluralize(quest.errors.count, "error") %> prohibited this quest from being saved:</p>
 
-      <ul>
+      
       <% quest.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <p><%= message %></p>
       <% end %>
       </ul>
     </div>

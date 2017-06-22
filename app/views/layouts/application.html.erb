@@ -26,12 +26,29 @@
         <a href="#!" class="brand-logo">Amazing Quest</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><%= link_to 'Create an Account', new_user_path %></li>
-          <li><%= link_to 'Login', new_session_path %></li>
+          
+          <% if !current_user%>
+            <li><%= link_to 'Create an Account', new_user_path,class:'waves-effect'  %></li>
+            <li><%= link_to 'Login', new_session_path,class:'waves-effect' %></li>
+          <% else %>
+            <li><%= current_user.name %></li>
+            <li><%= link_to 'Log Out', logout_path, method: "delete",class:'waves-effect' %></li>
+            <li class="divider"></li>
+          <% end %>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-          <li><%= link_to 'Create an Account', new_user_path %></li>
-          <li><%= link_to 'Login', new_session_path %></li>
+          <li class="mobile-text"><strong>Amazing Quest</strong></li>
+          <li class="divider"></li>
+          <% if !current_user%>
+            <li><%= link_to 'Create an Account', new_user_path,class:'waves-effect' %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Login', new_session_path,class:'waves-effect' %></li>
+          <% else %>
+            <li class="mobile-text">Welcome <%= current_user.name %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Log Out', logout_path, method: "delete", class:'waves-effect' %></li>
+            <li class="divider"></li>
+          <% end -%>
         </ul>
       </div>
     </nav>

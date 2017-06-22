@@ -1,16 +1,14 @@
 <p id="notice"><%= notice %></p>
-
+<%= link_to 'New Quest', new_quest_path, class:'waves-effect waves-light btn-flat' %>
 <h4>Quests As QM</h4>
 
 <table class="highlight bordered ">
   <thead>
     <tr>
       <td>Name</td>
-      <td>Quest Id</td>
       <td>Quest Date</td>
       <td>Quest Time</td>
-      <td>User Id</td>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -19,10 +17,8 @@
     <% @questmaster.each do |quest| %>
       <tr>
         <td><strong><%= quest.name %></strong></td>
-        <td><%= quest.id %></td>
         <td><%= quest.start.strftime("%Y-%m-%d") %></td>
         <td><%= quest.start.strftime("%l:%M %P") %></td>
-        <td><%= quest.user_id %></td>
         <td>
           <!-- Dropdown Trigger -->
           <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Options</a>
@@ -41,14 +37,13 @@
   </table>
 
 <h4>Quest as Participant</h4>
-    <table class=" highlight bordered centered">
+    <table class=" highlight bordered">
       <thead>
         <tr>
           <td>Name</td>
-          <td>Quest Id</td>
           <td>Quest Date</td>
           <td>Quest Time</td>
-          <th colspan="3"></th>
+          <th></th>
         </tr>
       </thead>
 
@@ -59,14 +54,10 @@
         <td><%= quest.start.strftime("%l:%M %P") %></td>
         <td>
           <!-- Dropdown Trigger -->
-          <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Options</a>
+          <a class='dropdown-button btn' href='#' data-activates='dropdown2'>Options</a>
           <!-- Dropdown Structure -->
-          <ul id='dropdown1' class='dropdown-content'>
+          <ul id='dropdown2' class='dropdown-content'>
             <li><%= link_to 'Show', quest %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Edit', edit_quest_path(quest) %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Destroy', quest, method: :delete, data: { confirm: 'Are you sure?' } %></li>
           </ul>
           </td>
       </tr>
@@ -75,6 +66,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Quest', new_quest_path %>
-<%= link_to 'Log Out', logout_path, method: "delete" %>
