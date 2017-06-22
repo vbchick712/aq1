@@ -20,24 +20,22 @@
   </head>
 
   <body>
-    <div class="container-fluid">
-      
-    
-    <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><%= link_to 'Create an Account', new_user_path %></li>
-        <li><%= link_to 'Login', new_session_path %></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><%= link_to 'Create an Account', new_user_path %></li>
-        <li><%= link_to 'Login', new_session_path %></li>
-      </ul>
-    </div>
-  </nav>
-</div>
+  <header class="header indigo z-depth-1">
+   <nav>
+      <div class="nav-wrapper indigo">
+        <a href="#!" class="brand-logo">The amazing Quest</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><%= link_to 'Create an Account', new_user_path %></li>
+          <li><%= link_to 'Login', new_session_path %></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><%= link_to 'Create an Account', new_user_path %></li>
+          <li><%= link_to 'Login', new_session_path %></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
   <div class="container">
     <%= yield %>
   </div>

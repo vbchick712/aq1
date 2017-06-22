@@ -28,4 +28,11 @@ body{
 .picker__weekday-display {
 	background-color: #000000;
 }
-
+.slider{
+	overflow: hidden;
+	z-index: 1;
+}
+.side-nav{
+	background-color: transparent;
+	box-shadow: none;
+}
