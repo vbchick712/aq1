@@ -1,7 +1,7 @@
-body {
+/*body {
   background-color: #fff;
   color: #333;
-  margin: 33px;
+  margin: none;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -51,17 +51,12 @@ div {
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+  padding: none;
+  background-color: rgba(255, 0, 0, 0.07);
+  display: flex;
 }
 
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px 7px 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+
 
   h2 {
     text-align: left;
@@ -69,16 +64,26 @@ div {
     padding: 5px 5px 5px 15px;
     font-size: 12px;
     margin: -7px -7px 0;
-    background-color: #c00;
-    color: #fff;
+    background-color: rgba(255, 0, 0, 0.2);
+    
   }
 
   ul li {
     font-size: 12px;
-    list-style: square;
+    list-style: none;
   }
 }
 
 label {
   display: block;
 }
+*/
+#error_explanation {
+  width: 80%;
+  border: none;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: rgba(255, 0, 0, 0.07);
+  margin: auto;
+  font-size: 14px;
+  }

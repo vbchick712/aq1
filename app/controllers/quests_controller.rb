@@ -1,10 +1,10 @@
-class QuestsController < ApplicationController
+  class QuestsController < ApplicationController
   before_action :set_quest, only: [:show, :edit, :update, :destroy]
   before_action :require_logged_in
   # GET /quests
   # GET /quests.json
   def index
-
+    
     quests_true = current_user.roles.select do |r|
       r.role == true
     end
@@ -45,16 +45,15 @@ class QuestsController < ApplicationController
   # POST /quests
   # POST /quests.json
   def create
+    
     @quest = current_user.quests.new(quest_params)
-
     respond_to do |format|
       if @quest.save
-      current_user.roles.create(quest_id: @quest.id, role: true)
-
-
+        current_user.roles.create(quest_id: @quest.id, role: true)
         format.html { redirect_to @quest, notice: 'Quest was successfully created.' }
         format.json { render :show, status: :created, location: @quest }
       else
+        puts "**** error messages: #{@quest.errors.full_messages}" 
         format.html { render :new }
         format.json { render json: @quest.errors, status: :unprocessable_entity }
       end

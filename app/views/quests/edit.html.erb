@@ -1,34 +1,39 @@
-<h1>Editing Quest</h1>
+<h4>Editing Quest</h4>
 <%= form_for @quest do |f| %>
-	<p>
+	<div class="input-field col s6">
 		<%= f.label :name %>
 		<%= f.text_field :name %>
-	</p>
+	</div>
 
-	<p>
+	<div class="input-field col s6">
 		<%= f.label :start %>
-		<%= f.text_field :start %>
-	</p>
+		<%= f.date_field :start,{class: 'datepicker'} %>
+	</div>
+	<div class="field col s6">
+		<%= f.label :start, "HH:MM" %>
+		<%= f.time_field :start, :ignore_date => true %>
+		
+	</div>
 
-	<p>
+	<div class="input-field col s6">
 		<%= f.label :description %>
 		<%= f.text_field :description %>
-	</p>
-	<p>
+	</div>
+	<div class="input-field col s6">
 		<%= f.label :invite_msg %>
 		<%= f.text_field :invite_msg %>
-	</p>
-	<p>
+	</div>
+	<div class="input-field col s6">
 		<%= f.label :start_msg %>
 		<%= f.text_field :start_msg %>
-	</p>
-	<p>
+	</div>
+	<div class="input-field col s6">
 		<%= f.label :final_msg %>
 		<%= f.text_field :final_msg %>
-	</p>
+	</div>
 
-	<%= f.submit %>
-	</p>
+	<%= f.submit class:'btn waves-effect waves-light' %>
+	</div>
 
 	<% end %>
 

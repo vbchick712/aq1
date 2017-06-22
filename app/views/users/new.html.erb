@@ -1,27 +1,27 @@
-<h1> Sign up</h1>
+<h4> Sign up</h4>
 <%= form_for @user do |f| %>
-	<p>
+	<div class="input-field col s6">
 		<%= f.label :name %>
 		<%= f.text_field :name %>
-	</p>
+	</div>
 
-	<p>
+	<div class="input-field col s6">
 		<%= f.label :email %>
-		<%= f.text_field :email %>
-	</p>
+		<%= f.email_field :email %>
+	</div>
 
-	<p>
+	<div class="input-field col s6">
 		<%= f.label :password %>
 		<%= f.password_field :password %>
-	</p>
+	</div>
 
-	<p>
+	<div class="input-field col s6">
 		<%= f.label :password_confirmation %>
 		<%= f.password_field :password_confirmation %>
-	</p>
+	</div>
 
 	<p>
-	<%= f.submit %>
+	<%= f.submit class:'btn waves-effect waves-light'%>
 	</p>
 
 	<% end %>

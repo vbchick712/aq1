@@ -1,4 +1,5 @@
 class UserMailer < ApplicationMailer
+
   default from: 'shannan@lastingimpressionsmarketing.com'
 
   def invite_email(user)

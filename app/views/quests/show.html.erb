@@ -1,28 +1,75 @@
 <p id="notice"><%= notice %></p>
 
-<p>Quest Name: <%= @quest.name %></p>
-<p></p>
+<h4><%= @quest.name %></h4>
+ 
+<h6><%= @quest.description%></h6>
+
 <p>Quest Date: <%= @quest.start.strftime("%Y-%m-%d")%> </p>
-<p></p>
-<p>Quest Time: <%= @quest.start.strftime("%l:%M:%S %P")%></p>
-<p></p>
+
+<p>Quest Time: <%= @quest.start.strftime("%l:%M %P")%></p>
+
 <p>Invite Message: <%= @quest.invite_msg %></p>
-<p></p>
+
 <p>Start Message: <%= @quest.start_msg %></p>
-<p></p>
+
 <p>Final Message: <%= @quest.final_msg %></p>
-<p></p>
-<p>Total Tasks: <%= @quest.tasks.size %></p>
-<p></p>
-<p>Participants: <% @participants.each do |n| %>
-                <br>  <%= n %>
-                  <% end %>
 
-</p>
-<p></p>
-
-<%= link_to 'Add Participant', users_invite_path(@quest) %> |
-<%= link_to 'Add Task', new_task_path(@quest) %> |
-<%= link_to 'Edit Tasks', task_path(@quest) %> |
-<%= link_to 'Edit Quest', edit_quest_path(@quest) %> |
-<%= link_to 'Quest Home', quests_path %>
+<p>Total Tasks: <%= @quest.tasks.count %></p>
+<ul id="tabs-swipe-demo" class="tabs ">
+	<% x = 1%>
+	<% @quest.tasks.sort.each do |task| %>
+		<% id = "#test-swipe-" + task.id.to_s %>
+		<li class="tab col s3 "><a href=<%= id%> class="black-text text-darken-2">Task <%= x%> </a></li>
+		<% x +=1 %>	
+    <% end %>
+</ul>
+<% @quest.tasks.each do |task| %>
+<% id = 'test-swipe-' + task.id.to_s %>
+<div id=<%=id%> class="col s12 #f5f5f5 grey lighten-4">
+	<p><%= task.name %></p>
+	<p>Task: <%= task.description %></p>
+	<p></p>
+	<p>Clue 1: <%= task.clue1 %></p>
+	<p></p>
+	<p>Clue 2: <%= task.clue2 %></p>
+	<p></p>
+	<p>Clue 3: <%= task.clue2 %></p>
+	<p></p>
+	<p>Clue Timer: <%= task.clue_timer %> minutes</p>
+	<p></p>
+	<p>Answer: <%= task.answer %></p>
+	<p></p>
+	<p>Correct Answer Comment: <%= task.answer_comment %></p>
+	<p></p>
+	<p>Skip Task Comment: <%= task.skip_comment %></p>
+	<p></p>
+	<div class="collection">
+		<%= link_to 'Edit Tasks', edit_task_path(task.id), class:'collection-item black-text text-darken-2' %>
+	</div>
+</div>
+<% end %>
+<ul class="collection">	
+	<li class="collection-item heading"> Participants</li>
+	<% a =0 %>
+	<% @quest.roles.each do |role| %>
+	<% a = a + 1%>
+	<% if role.role == false %>
+		<li class="collection-item avatar">
+			<% if a == 2 %>
+				<%= image_tag 'yuna.jpg', class: 'circle'%>
+			<% else %>
+				<i class="material-icons circle">perm_identity</i>
+			<% end %>
+			<h6><%= role.user.name %></h6>
+			<!-- <p><%= role.user.email %></p> -->
+			<p>Pending Acceptance</p>
+		</li>
+	<% end -%>	
+<% end -%>
+</ul>
+<div class="collection">
+<%= link_to 'Add Participant', users_invite_path(@quest), class:'collection-item black-text text-darken-2'  %>
+<%= link_to 'Add Task', new_task_path(@quest), class:'collection-item black-text text-darken-2' %>
+<%= link_to 'Edit Quest', edit_quest_path(@quest), class:'collection-item black-text text-darken-2' %>
+<%= link_to 'Quest Home', quests_path, class:'collection-item black-text text-darken-2' %>
+</div>

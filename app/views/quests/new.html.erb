@@ -1,35 +1,55 @@
-<h1> Quest</h1>
+<% if @quest.errors.any? %>
+    <div id="error_explanation">
+      <p><%= pluralize(@quest.errors.count, "field") %> is required to create a Quest:</p>
+
+      <ul>
+      <% @quest.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<h4>New Quest</h4>
+<%= link_to 'Back', quests_path, class:'right waves-effect waves-light btn' %>
 <%= form_for @quest do |f| %>
-	<p>
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-	</p>
 
-	<p>
+	<div class="input-field col s6">
+        <!-- <input id="last_name" type="text" class="validate"> 
+        <label for="last_name">Last Name</label> -->
+        <%= f.label :name, class:'active' %>
+        <%= f.text_field :name, class:'validate' %>
+        
+    </div>
+	<div class="input-field col s6">
 		<%= f.label :start %>
-		<%= f.datetime_field :start %>
-	</p>
-
-	<p>
+		<%= f.date_field :start,{class: 'datepicker'} %>
+	</div>
+	<div class="field col s6">
+		<%= f.label :start, "HH:MM" %>
+		<%= f.time_field :start, :ignore_date => true %>
+		
+	</div>
+	
+	<div class="input-field col s6">
 		<%= f.label :description %>
 		<%= f.text_field :description %>
-	</p>
-	<p>
+	</div>
+	<div class="input-field col s6">
 		<%= f.label :invite_msg %>
 		<%= f.text_field :invite_msg %>
-	</p>
-	<p>
+	</div>
+	<div class="input-field col s6">
 		<%= f.label :start_msg %>
 		<%= f.text_field :start_msg %>
-	</p>
-	<p>
+	</div>
+	<div class="input-field col s6">
 		<%= f.label :final_msg %>
 		<%= f.text_field :final_msg %>
-	</p>
+	</div>
 
-	<%= f.submit %>
-	</p>
+	<%= f.submit class:'btn waves-effect waves-light'%>
+	</div>
 
 	<% end %>
-
-	<%= link_to 'Log Out', logout_path, method: "delete" %>
+	
+	

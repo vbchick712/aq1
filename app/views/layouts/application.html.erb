@@ -1,14 +1,64 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  	<!--Import Google Icon Font-->
+     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+     <!--Import Google Roboto Font-->
+     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <title>aq1</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    </head>
   </head>
 
   <body>
+  <header class="header indigo z-depth-1">
+   <nav>
+      <div class="nav-wrapper indigo">
+        <a href="#!" class="brand-logo">Amazing Quest</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          
+          <% if !current_user%>
+            <li><%= link_to 'Create an Account', new_user_path,class:'waves-effect'  %></li>
+            <li><%= link_to 'Login', new_session_path,class:'waves-effect' %></li>
+          <% else %>
+            <li><%= link_to current_user.name, quests_path %></li>
+            <li><%= link_to 'Log Out', logout_path, method: "delete",class:'waves-effect' %></li>
+            <li class="divider"></li>
+          <% end %>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li class="mobile-text"><strong>Amazing Quest</strong></li>
+          <li class="divider"></li>
+          <% if !current_user%>
+            <li><%= link_to 'Create an Account', new_user_path,class:'waves-effect' %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Login', new_session_path,class:'waves-effect' %></li>
+          <% else %>
+            <li><%= link_to "Welcome #{current_user.name}", quests_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Log Out', logout_path, method: "delete", class:'waves-effect' %></li>
+            <li class="divider"></li>
+          <% end -%>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
     <%= yield %>
+  </div>
+  
+      <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+          
   </body>
 </html>
