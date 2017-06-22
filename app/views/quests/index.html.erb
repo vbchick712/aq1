@@ -6,9 +6,9 @@
   <thead>
     <tr>
       <td>Name</td>
-      <td>Quest Id</td>
-      <td>Quest Date</td>
-      <td>User Id</td>
+      <td>Number</td>
+      <td>Date</td>
+      <!-- <td>User Id</td> -->
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,7 +20,7 @@
         <td><%= quest.name %></td>
         <td><%= quest.id %></td>
         <td><%= quest.start %></td>
-        <td><%= quest.user_id %></td>
+        <!-- <td><%= quest.user_id %></td> -->
         <td><%= link_to 'Show', quest %></td>
         <td><%= link_to 'Edit', edit_quest_path(quest) %></td>
         <td><%= link_to 'Destroy', quest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -42,9 +42,9 @@
       <thead>
         <tr>
           <td>Name</td>
-          <td>Quest Id</td>
-          <td>Quest Date</td>
-          <td>User Id</td>
+          <td>Number</td>
+          <td>Date</td>
+          <td>QM</td>
           <th colspan="3"></th>
         </tr>
       </thead>
