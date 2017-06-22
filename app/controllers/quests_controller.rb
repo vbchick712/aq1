@@ -25,18 +25,11 @@ class QuestsController < ApplicationController
       @quest = Quest.find(params[:id])
       @tasks = @quest.tasks
 
-# Testing how to pull User's Name as a Participant in a Quest
+      # This code pulls the Participants Names and shows them on the Quest View
       @quest_participants = Quest.find(params[:id]).roles.select do |r|
         r.role == false
       end
-
       @participants = @quest_participants.map {|u| u.user.name}
-
-      # @participant_name = participants.each do |n|
-
-
-
-
   end
 
   # GET /quests/new
