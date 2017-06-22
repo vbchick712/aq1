@@ -31,7 +31,7 @@
             <li><%= link_to 'Create an Account', new_user_path,class:'waves-effect'  %></li>
             <li><%= link_to 'Login', new_session_path,class:'waves-effect' %></li>
           <% else %>
-            <li><%= current_user.name %></li>
+            <li><%= link_to current_user.name, quests_path %></li>
             <li><%= link_to 'Log Out', logout_path, method: "delete",class:'waves-effect' %></li>
             <li class="divider"></li>
           <% end %>
@@ -44,7 +44,7 @@
             <li class="divider"></li>
             <li><%= link_to 'Login', new_session_path,class:'waves-effect' %></li>
           <% else %>
-            <li class="mobile-text">Welcome <%= current_user.name %></li>
+            <li><%= link_to "Welcome #{current_user.name}", quests_path %></li>
             <li class="divider"></li>
             <li><%= link_to 'Log Out', logout_path, method: "delete", class:'waves-effect' %></li>
             <li class="divider"></li>
