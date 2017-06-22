@@ -2,7 +2,7 @@
 <% @quest.tasks.each do |task| %>
 	<div class="card">
     <div class="card-image waves-effect waves-block waves-light">
-      <%= image_tag 'office.jpg', size: "500x350"%>
+      <%= image_tag 'office.jpg', width: "337"%>
       <!-- <img class="activator" src="images/office.jpg"> -->
     </div>
     <div class="card-content">
@@ -16,7 +16,8 @@
       <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
       <p><%= label_tag %></p>
     </div>
-    <div class="card-reveal">
+    <div class="card-reveal centered">
+    	<%= image_tag 'ben-white-178537.jpg', width: '324'%>
       <span class="card-title grey-text text-darken-4">New Clue<i class="material-icons right">close</i></span>
       <p><%= task.clue1 %></p>
     </div>
