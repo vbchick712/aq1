@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
 <%= link_to 'New Quest', new_quest_path, class:'waves-effect waves-light btn-flat' %>
-<<<<<<< HEAD
+
 <h4>Quests I've Created:</h4>
 
 <table class="highlight bordered ">
@@ -30,7 +29,7 @@
             <li class="divider"></li>
             <li><%= link_to 'Edit', edit_quest_path(quest) %></li>
             <li class="divider"></li>
-            <li><%= link_to 'Destroy', quest, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <li><%= link_to 'Destroy', quest, method: :delete, data: { confirm: 'Are you sure? Once you destroy a quest it is gone forever!' } %></li>
           </ul>
           </td>
       </tr>
@@ -66,5 +65,3 @@
     <% end %>
   </tbody>
 </table>
-
-

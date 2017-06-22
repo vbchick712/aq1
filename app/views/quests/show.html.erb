@@ -1,7 +1,5 @@
-<p id="notice"><%= notice %></p>
-
 <h4><%= @quest.name %></h4>
- 
+
 <h6><%= @quest.description%></h6>
 
 <p>Quest Date: <%= @quest.start.strftime("%Y-%m-%d")%> </p>
@@ -20,7 +18,7 @@
 	<% @quest.tasks.sort.each do |task| %>
 		<% id = "#test-swipe-" + task.id.to_s %>
 		<li class="tab col s3 "><a href=<%= id%> class="black-text text-darken-2">Task <%= x%> </a></li>
-		<% x +=1 %>	
+		<% x +=1 %>
     <% end %>
 </ul>
 <% @quest.tasks.each do |task| %>
@@ -48,7 +46,7 @@
 	</div>
 </div>
 <% end %>
-<ul class="collection">	
+<ul class="collection">
 	<li class="collection-item heading"> Participants</li>
 	<% a =0 %>
 	<% @quest.roles.each do |role| %>
@@ -64,12 +62,13 @@
 			<!-- <p><%= role.user.email %></p> -->
 			<p>Pending Acceptance</p>
 		</li>
-	<% end -%>	
+	<% end -%>
 <% end -%>
 </ul>
 <div class="collection">
-<%= link_to 'Add Participant', users_invite_path(@quest), class:'collection-item black-text text-darken-2'  %>
-<%= link_to 'Add Task', new_task_path(@quest), class:'collection-item black-text text-darken-2' %>
-<%= link_to 'Edit Quest', edit_quest_path(@quest), class:'collection-item black-text text-darken-2' %>
+<%= link_to 'Edit Quest', edit_quest_path(@quest), class:'collection-item black-text text-darken-2' %> |
+<%= link_to 'All Tasks', quest_tasks_path(@quest), class:'collection-item black-text text-darken-2' %> |
+<%= link_to 'Add Task', new_quest_task_path(@quest), class:'collection-item black-text text-darken-2' %> |
+<%= link_to 'Add Participant', users_invite_path(@quest), class:'collection-item black-text text-darken-2' %> |
 <%= link_to 'Quest Home', quests_path, class:'collection-item black-text text-darken-2' %>
 </div>

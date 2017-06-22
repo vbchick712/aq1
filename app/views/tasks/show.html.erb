@@ -1,3 +1,4 @@
+<h1>SHOW TASKS</h1>
 <p id="notice"><%= notice %></p>
 
 <p>Quest Name: <%= @task.quest.name %></p>
@@ -23,6 +24,6 @@
 <p>Skip Task Comment: <%= @task.skip_comment %></p>
 <p></p>
 
-<%= link_to 'Add Task', new_task_path(@task.quest) %> |
-<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Add Task', new_quest_task_path %> |
+<%= link_to 'Edit Tasks', quest_tasks_path %> |
 <%= link_to 'Return to Quest', quests_path(@quest) %>

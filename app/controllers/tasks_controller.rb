@@ -4,41 +4,42 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = current_user.quests.find(params[:format]).tasks
+    @quest = Quest.find(params[:quest_id])
+    @tasks = @quest.tasks
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
   def show
-    @task = Task.find(params[:id])
-    # @tasks = @quest.tasks#.find(params[:quest_id])
+    @quest = Quest.find(params[:quest_id])
+    @task = @quest.tasks.find(params[:id])
   end
 
   # GET /tasks/new
   def new
     # @task = current_user.tasks.new#(:quest_id => params[:quest_id])
-    quest = Quest.find(params[:format])
-    @task = quest.tasks.new
+    @quest = Quest.find(params[:quest_id])
+    @task = @quest.tasks.new
   end
 
   # GET /tasks/1/edit
   def edit
+    @quest = Quest.find(params[:quest_id])
+    @task = @quest.tasks.find(params[:id])
   end
 
   # POST /tasks
   # POST /tasks.json
   def create
-    # Shannan Comment: This is sample code from Stack OVerflow to set the quest_id with the task
-    # @task = Task.new(task_params).merge(:quest_id => @quest.id)
     @task = Task.new(task_params)
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
+        format.html { redirect_to quest_tasks_path, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
+        format.json { render json: [@quest, @task].errors, status: :unprocessable_entity }
       end
     end
   end

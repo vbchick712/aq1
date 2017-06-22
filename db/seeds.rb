@@ -27,6 +27,8 @@ User.create!([
   {name: "Ivan", email: "ivan@gmail.com", password_digest: BCrypt::Password.create('a')},
   {name: "Jorge", email: "jorge@gmail.com", password_digest: BCrypt::Password.create('a')},
   {name: "Bill", email: "bill@gmail.com", password_digest: BCrypt::Password.create('a')},
+  {name: "Shannan", email: "shannan.muench@gmail.com", password_digest: BCrypt::Password.create('a')},
+  {name: "Dave", email: "david.w.muench@gmail.com", password_digest: BCrypt::Password.create('a')},
   ])
 
 Quest.create!([
@@ -40,6 +42,7 @@ Quest.create!([
   {name: "Quest8", description: "Quest8 of awesomeness", start: "2017-07-04 19:30:00", user_id: 8, invite_msg: "Get ready for the quest!", start_msg: "Have fun Questing!", final_msg: "Great job on the Quest!"},
   {name: "Quest9", description: "Quest9 of awesomeness", start: "2017-07-04 20:30:00", user_id: 9, invite_msg: "Get ready for the quest!", start_msg: "Have fun Questing!", final_msg: "Great job on the Quest!"},
   {name: "Quest10", description: "Quest10 of awesomeness", start: "2017-07-04 21:30:00", user_id: 10, invite_msg: "Get ready for the quest!", start_msg: "Have fun Questing!", final_msg: "Great job on the Quest!"},
+  {name: "Dave's 40th Birthday Quest of Awesomeness", description: "This is going to be a super fun quest to celebrate your 40th Birthday!!!", start: "2017-10-10 10:30:00", user_id: 22, invite_msg: "To celebrate your 40 years of life, this quest is going to take you to some memorable places to reminisce with old friends but create memories with new friends. Make sure you wear something comfortable, prepare for an active day, and don't forget your phone charger!", start_msg: "Okay- it's GO TIME! To complete this quest, you need to complete all of the tasks. You can skip tasks if necessary, but only do that if absolutely necessary. If you get stuck along the way, text or call me! Remember, take pictures or videos and post them to Facebook with the the '#DaveIz40' and '#AmazingQuest' hash tags so I can capture your memories and track your progress! Remember to have fun and be present in the moment!", final_msg: "I hope you had an amazing time and captured your memories along the way!"},
   ])
 
 Task.create!([
@@ -89,10 +92,10 @@ Task.create!([
   {name: "Task1", description: "Task 1 of Quest 10", answer: "Task Answer", quest_id: 10, clue1: "Something Witty to Help You!", clue2: "Something sarcastic to anger you!", clue3: "Something snarky to really piss you off!", clue_timer: 2, answer_check: false, answer_comment: "Great job!", skip_comment: "Quitter!"},
   {name: "Task2", description: "Task 2 of Quest 10", answer: "Task Answer", quest_id: 10, clue1: "Something Witty to Help You!", clue2: "Something sarcastic to anger you!", clue3: "Something snarky to really piss you off!", clue_timer: 2, answer_check: false, answer_comment: "Great job!", skip_comment: "Quitter!"},
   {name: "Task3", description: "Task 3 of Quest 10", answer: "Task Answer", quest_id: 10, clue1: "Something Witty to Help You!", clue2: "Something sarcastic to anger you!", clue3: "Something snarky to really piss you off!", clue_timer: 2, answer_check: false, answer_comment: "Great job!", skip_comment: "Quitter!"},
-  {name: "Task4", description: "Task 4 of Quest 10", answer: "Task Answer", quest_id: 10, clue1: "Something Witty to Help You!", clue2: "Something sarcastic to anger you!", clue3: "Something snarky to really piss you off!", clue_timer: 2, answer_check: false, answer_comment: "Great job!", skip_comment: "Quitter!"},
-  {name: "Task5", description: "Task 5 of Quest 10", answer: "Task Answer", quest_id: 10, clue1: "Something Witty to Help You!", clue2: "Something sarcastic to anger you!", clue3: "Something snarky to really piss you off!", clue_timer: 2, answer_check: false, answer_comment: "Great job!", skip_comment: "Quitter!"},
-  {name: "Task6", description: "Task 6 of Quest 10", answer: "Task Answer", quest_id: 10, clue1: "Something Witty to Help You!", clue2: "Something sarcastic to anger you!", clue3: "Something snarky to really piss you off!", clue_timer: 2, answer_check: false, answer_comment: "Great job!", skip_comment: "Quitter!"},
-  {name: "Task7", description: "Task 7 of Quest 10", answer: "Task Answer", quest_id: 10, clue1: "Something Witty to Help You!", clue2: "Something sarcastic to anger you!", clue3: "Something snarky to really piss you off!", clue_timer: 2, answer_check: false, answer_comment: "Great job!", skip_comment: "Quitter!"},
+  {name: "Feed Me!", description: "The way to a man's heart is through his stomache. Go to our favorite breakfast place and tell the hostess that 'Dave has arrived!' Follower her instructions and enter your answer below.", answer: "Weston Diner", quest_id: 11, clue1: "Where is the best place for grits?", clue2: "If you really need another clue, there is an issue!", clue3: "It's the Weston Diner!!!", clue_timer: 2, answer_check: false, answer_comment: "Great job! Keep going!", skip_comment: "Quitter!"},
+  {name: "Up and Away!!!", description: "When we met, you wanted to go to Airborne School but you gave that up for me. But now, you can feel like you are parachuting without jumping out of an airplane! Find the next place and shout 'Airborne!!!!' when you walk inside.", answer: "iFLY Ft Lauderdale", quest_id: 11, clue1: "You have to FLY but i love to FLY!", clue2: "It's right of hwy 84 just east of Weston", clue3: "Go to 11690 West State Road 84, Davie, Florida 33325", clue_timer: 2, answer_check: false, answer_comment: "Great job!", skip_comment: "Chicken!!!"},
+  {name: "Hard Target", description: "Now that you earned your Airborne Wings, you need to make sure you can hit your target. Head to this next place and find an employee and let them know 'Dave is in da houzzz!!!'", answer: "2600 Davie Rd, Davie, FL 33314", quest_id: 11, clue1: "This place is really modern!", clue2: "Oh sure, you can get a German Marksmanship Badge but you can't find a good range!", clue3: "Head east on 595 and exit at Davie Rd.", clue_timer: 2, answer_check: false, answer_comment: "I knew you could do it!", skip_comment: "Really?! This one?!"},
+  {name: "Riddle me this!", description: "Okay, the easy ones are behind you. Now you have to earn this one! Head to Markham Park and look for a clue once you arrive. It'll be obvious to start!", answer: "40", quest_id: 11, clue1: "Text Kimi to see if she can help you!", clue2: "Go to the Dog Park!", clue3: "Text me and I'll tell you where to go.", clue_timer: 3, answer_check: false, answer_comment: "Finally! That one was tough!!!", skip_comment: "I will never let you live this down!"},
   ])
 
 Role.create!([
@@ -123,4 +126,6 @@ Role.create!([
   {role: true, user_id: 2, quest_id: 10},
   {role: false, user_id: 3, quest_id: 10},
   {role: false, user_id: 9, quest_id: 10},
+  {role: true, user_id: 22, quest_id: 11},
+  {role: false, user_id: 23, quest_id: 11}
   ])
