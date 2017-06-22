@@ -35,7 +35,10 @@
   # GET /quests/1/edit
   def edit
   end
-
+  def showtime
+    @quest = Quest.find(params[:format])
+    @tasks = @quest.tasks
+  end
   # POST /quests
   # POST /quests.json
   def create

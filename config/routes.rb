@@ -9,6 +9,7 @@
   delete 'logout' => 'sessions#destroy'
   get 'logout' => 'sessions#destroy'
 	get 'users/invite'
+  get 'quests/showtime'
 
   resources :sessions
   resources :tasks

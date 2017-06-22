@@ -1,0 +1,25 @@
+<h4><%= @quest.name%></h4>
+<% @quest.tasks.each do |task| %>
+	<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <%= image_tag 'office.jpg', size: "500x350"%>
+      <!-- <img class="activator" src="images/office.jpg"> -->
+    </div>
+    <div class="card-content">
+      <h4><%= task.name %></h4>
+	  <span><%= task.description %></span><br>
+	  <span><%= task.description %></span><br>
+	  <span><%= task.description %></span><br>
+	  <span><%= task.description %></span><br>
+	  <span><%= task.description %></span><br>
+	  <span><%= task.description %></span><br>
+      <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
+      <p><%= label_tag %></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">New Clue<i class="material-icons right">close</i></span>
+      <p><%= task.clue1 %></p>
+    </div>
+  </div>
+
+	<% end -%>
