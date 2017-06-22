@@ -1,3 +1,3 @@
 class Task < ApplicationRecord
-  belongs_to :quest
+  belongs_to :quest, touch: true
 end
