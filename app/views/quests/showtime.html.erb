@@ -1,9 +1,10 @@
 <h4><%= @quest.name%></h4>
 <a href="" id="show_img">wdkjgs</a>
 <% @quest.tasks.each do |task| %>
-  <% i=0%>
-  <% card ="card#{i}" %>
-	<div class="card quest">
+  
+  <div class="quest">
+  
+	<div class="card">
     <div class="card-image waves-effect waves-block waves-light">
       <%= image_tag 'COYO-Taco-10.jpg', width: "337"%>
       <!-- <img class="activator" src="images/office.jpg"> -->
@@ -26,5 +27,13 @@
       <p><%= task.clue1 %></p>
     </div>
   </div>
-  <% i+=1%>
+ </div> 
 	<% end -%>
+  <div class="message">
+    <div class="card-image waves-effect waves-block waves-light">
+      <%= image_tag 'Leo-Congrats.gif', width: "337"%>
+      <!-- <img class="activator" src="images/office.jpg"> -->
+    </div>
+
+
+  </div>
