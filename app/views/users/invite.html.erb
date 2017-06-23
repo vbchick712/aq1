@@ -1,21 +1,33 @@
 <h1> Invite Participants</h1>
 
-<%= form_with url: quest_path(params[:format]), method: :get do |f| %>
+<!-- <%#= form_with url: quest_path(params[:format]), method: :get do |f| %>
 
-  <%= f.hidden_field :quest_id, value: @user %>
+  <%#= f.hidden_field :quest_id, value: @user %>
 
   <p>
-		<%= f.label :name %>
-		<%= f.text_field :name %>
+		<%#= f.label :name %>
+		<%#= f.text_field :name %>
 	</p>
 
 	<p>
-		<%= f.label :email %>
-		<%= f.text_field :email %>
+		<%#= f.label :email %>
+		<%#= f.text_field :email %>
 	</p>
 
 	<p>
-	<%= f.submit 'Send Invitation' %>
+	<%#= f.submit 'Send Invitation' %>
 	</p>
 
-	<% end %>
+	<% end %> -->
+
+
+<!-- Code from Invite Mailer Blog- Delete when we have it working -->
+  <%= form_for @invite , :url => invites_path do |f| %>
+  <!-- The line below is going to throw an error because it's referencing the Quest model and not the User model -->
+      <%= f.hidden_field :quest_id, :value => @invite.quest_id %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+      <%= f.submit 'Send Invitation' %>
+  <% end %>
