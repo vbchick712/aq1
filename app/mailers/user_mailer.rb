@@ -1,9 +1,9 @@
 class UserMailer < ApplicationMailer
-  default from: 'shannan@lastingimpressionsmarketing.com'
+  default from: 'amazingquestco@gmail.com'
 
   def invite_email(user)
     @user = user
-    @url = 'http://www.amazingquest.com'
+    @url = 'http://www.amazingquest.co'
     mail(to: @user.email, subject: 'You are invited to a Quest!')
   end
 
