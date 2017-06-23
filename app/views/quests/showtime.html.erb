@@ -1,19 +1,23 @@
 <h4><%= @quest.name%></h4>
+<a href="" id="show_img">wdkjgs</a>
 <% @quest.tasks.each do |task| %>
-	<div class="card">
+  <% i=0%>
+  <% card ="card#{i}" %>
+	<div class="card quest">
     <div class="card-image waves-effect waves-block waves-light">
-      <%= image_tag 'office.jpg', width: "337"%>
+      <%= image_tag 'COYO-Taco-10.jpg', width: "337"%>
       <!-- <img class="activator" src="images/office.jpg"> -->
     </div>
     <div class="card-content">
       <h4><%= task.name %></h4>
-	  <span><%= task.description %></span><br>
-	  <span><%= task.description %></span><br>
-	  <span><%= task.description %></span><br>
-	  <span><%= task.description %></span><br>
-	  <span><%= task.description %></span><br>
-	  <span><%= task.description %></span><br>
-      <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
+      <span id="my_image" class="card-title activator grey-text text-darken-4"><i class="medium material-icons right" >help</i></span>
+  	  <span><%= task.description %></span><br>
+  	  <span><%= task.description %></span>
+  	  <span><%= task.description %></span><br>
+  	  <span><%= task.description %></span><br>
+  	  <span><%= task.description %></span><br>
+  	  <span><%= task.description %></span><br>
+      
       <p><%= label_tag %></p>
     </div>
     <div class="card-reveal centered">
@@ -22,5 +26,5 @@
       <p><%= task.clue1 %></p>
     </div>
   </div>
-
+  <% i+=1%>
 	<% end -%>
