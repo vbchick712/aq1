@@ -42,7 +42,8 @@
 	<p>Skip Task Comment: <%= task.skip_comment %></p>
 	<p></p>
 	<div class="collection">
-		<%= link_to 'Edit Tasks', edit_task_path(task.id), class:'collection-item black-text text-darken-2' %>
+		<%= link_to 'Edit Tasks', edit_quest_task_path(task.id), class:'collection-item black-text text-darken-2' %>
+		<%= link_to 'Add Task', new_quest_task_path(@quest), class:'collection-item black-text text-darken-2' %>
 	</div>
 </div>
 <% end %>
@@ -68,7 +69,6 @@
 <div class="collection">
 <%= link_to 'Edit Quest', edit_quest_path(@quest), class:'collection-item black-text text-darken-2' %> |
 <%= link_to 'All Tasks', quest_tasks_path(@quest), class:'collection-item black-text text-darken-2' %> |
-<%= link_to 'Add Task', new_quest_task_path(@quest), class:'collection-item black-text text-darken-2' %> |
 <%= link_to 'Add Participant', users_invite_path(@quest), class:'collection-item black-text text-darken-2' %> |
 <%= link_to 'Quest Home', quests_path, class:'collection-item black-text text-darken-2' %>
 </div>

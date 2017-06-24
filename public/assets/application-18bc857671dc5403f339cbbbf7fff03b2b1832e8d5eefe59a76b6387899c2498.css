@@ -1,0 +1,129 @@
+/*body {
+  background-color: #fff;
+  color: #333;
+  margin: none;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #000;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+th {
+  padding-bottom: 5px;
+}
+
+td {
+  padding: 0 5px 7px;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: none;
+  background-color: rgba(255, 0, 0, 0.07);
+  display: flex;
+}
+
+
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: rgba(255, 0, 0, 0.2);
+    
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: none;
+  }
+}
+
+label {
+  display: block;
+}
+*/
+/* line 82, /Users/RazorPro13/Desktop/wyncode/aq1/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 80%;
+  border: none;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: rgba(255, 0, 0, 0.07);
+  margin: auto;
+  font-size: 14px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/*body{
+	background-color: lightgray;
+}*/
+
+td, th {
+	padding: 15px 5px;
+}
+body{
+	font-family: Roboto;
+}
+/*.picker__date-display {
+	background-color: gray;
+}
+.picker__weekday-display {
+	background-color: #000000;
+}*/
+.slider{
+	overflow: hidden;
+	z-index: -1;
+}
+.mobile-text{
+	color:black;
+	padding: 0 32px;
+}
