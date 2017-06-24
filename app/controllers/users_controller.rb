@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        UserMailer.invite_email(@user).deliver_now
+        # UserMailer.invite_email(@user).deliver_now
         format.html { redirect_to users_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -43,7 +43,8 @@ class UsersController < ApplicationController
     # if user is not in the User table, then create a user and role with the quest_id
     @user = User.find_by(email: params[:email])
       unless @user
-        @user = User.new(email: params[:email])
+        @user = User.create(name: params[:name], email: params[:email], password: 'quest')
+        # @user = User.create_with_additional_validation(name: params[:name], email: params[:email], password: 'quest')
         @role = Role.create(quest_id: (params[:quest_id]), user_id: (params[:user_id]))
       else
         # the user is in the User table already, just add them to the role table for that quest
@@ -51,9 +52,13 @@ class UsersController < ApplicationController
       end
       # send everyone the invite_email for the quest they were invited to and notify the user it all worked
       UserMailer.invite_email(@user).deliver_now
-      redirect_to root_path
-      # format.html { redirect_to quests_path, notice: 'Participant was invited'}
+      # format.html { redirect_to @quest(:quest_id), notice: 'Participant was invited'}
     end
+
+
+    # def create_with_additional_validation
+    #   @user = User.new(user_params)
+    # end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
