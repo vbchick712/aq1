@@ -1,9 +1,6 @@
 <h4><%= @quest.name%></h4>
-<a href="" id="show_img">wdkjgs</a>
 <% @quest.tasks.each do |task| %>
-  
   <div class="quest">
-  
 	<div class="card">
     <div class="card-image waves-effect waves-block waves-light">
       <%= image_tag 'COYO-Taco-10.jpg', width: "337"%>
@@ -11,7 +8,7 @@
     </div>
     <div class="card-content">
       <h4><%= task.name %></h4>
-      <span id="my_image" class="card-title activator grey-text text-darken-4"><i class="medium material-icons right" >help</i></span>
+      <div class="help"><span id="my_image" class="card-title activator grey-text text-darken-4"><i class="medium material-icons right" >help</i></span></div>
   	  <span><%= task.description %></span><br>
   	  <span><%= task.description %></span>
   	  <span><%= task.description %></span><br>
@@ -24,16 +21,18 @@
     <div class="card-reveal centered">
     	<%= image_tag 'ben-white-178537.jpg', width: '324'%>
       <span class="card-title grey-text text-darken-4">New Clue<i class="material-icons right">close</i></span>
+      <div class="clue"></div>
       <p><%= task.clue1 %></p>
     </div>
   </div>
  </div> 
 	<% end -%>
+  
   <div class="message">
     <div class="card-image waves-effect waves-block waves-light">
-      <%= image_tag 'Leo-Congrats.gif', width: "337"%>
+      <%= image_tag 'congrats2.gif', width: "372"%>
       <!-- <img class="activator" src="images/office.jpg"> -->
     </div>
-
-
   </div>
+  <div class="home1234"><%= link_to 'Go to your Quests', quests_path, class: 'waves-effect waves-light btn-large' %></div>
+  <a href="#" id="show_img" class="waves-effect waves-light btn-large">Start Quest And best of luck!!!</a>
