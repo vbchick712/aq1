@@ -1,6 +1,7 @@
 <h4><%= @quest.name%></h4>
+<h5><%= @quest.start_msg %></h5>
 <% @quest.tasks.each do |task| %>
-  <div class="quest">
+ <div class="quest">
 	<div class="card">
     <div class="card-image waves-effect waves-block waves-light">
       <%= image_tag 'COYO-Taco-10.jpg', width: "337"%>
@@ -10,13 +11,12 @@
       <h4><%= task.name %></h4>
       <div class="help"><span id="my_image" class="card-title activator grey-text text-darken-4"><i class="medium material-icons right" >help</i></span></div>
   	  <span><%= task.description %></span><br>
-  	  <span><%= task.description %></span>
-  	  <span><%= task.description %></span><br>
-  	  <span><%= task.description %></span><br>
-  	  <span><%= task.description %></span><br>
-  	  <span><%= task.description %></span><br>
-      
-      <p><%= label_tag %></p>
+  	  <div class="input-field col s6">
+      <%= label_tag 'answer', 'Answer'%>
+      <div class="resp"><%= text_field_tag "answer" %></div>
+      <%= text_field_tag "id", task.id %>
+      <%= text_field_tag 'answertask', task.answer %>
+      </div>
     </div>
     <div class="card-reveal centered">
     	<%= image_tag 'ben-white-178537.jpg', width: '324'%>
@@ -25,14 +25,16 @@
       <p><%= task.clue1 %></p>
     </div>
   </div>
+  
  </div> 
 	<% end -%>
-  
+  <a href="#" id="show_img" class="waves-effect waves-light btn-large">Start Quest </a>
   <div class="message">
     <div class="card-image waves-effect waves-block waves-light">
       <%= image_tag 'congrats2.gif', width: "372"%>
       <!-- <img class="activator" src="images/office.jpg"> -->
+      <h4><%= @quest.final_msg %></h4>
     </div>
   </div>
   <div class="home1234"><%= link_to 'Go to your Quests', quests_path, class: 'waves-effect waves-light btn-large' %></div>
-  <a href="#" id="show_img" class="waves-effect waves-light btn-large">Start Quest And best of luck!!!</a>
+  
