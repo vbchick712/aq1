@@ -13,39 +13,31 @@ class Invite < ApplicationRecord
   def create
    @invite = Invite.new(invite_params) # Make a new Invite
    @invite.sender_id = current_user.id # set the sender to the current user
-   if @invite.save
+    if @invite.save
 
-      #if the user already exists
-     if @invite.recipient != nil
+        #if the user already exists
+        if @invite.recipient != nil
 
-        #send a notification email
-        InviteMailer.existing_user_invite(@invite).deliver
+          #send a notification email
+          InviteMailer.existing_user_invite(@invite).deliver
 
-        #Add the user to the user group
-        @invite.recipient.quests.push(@invite.quest)
+          #Add the user to the user group
+          @invite.recipient.quests.push(@invite.quest)
 
-      else
-     InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver
-  end
-else
-   # oh no, creating an new invitation failed
-end
-
-
+        else
+            UserMailer.new_user_invite(@invite, new_session_path(:invite_token => @invite.token)).deliver #send the invite data to our mailer to deliver the email
+          # InviteMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver
+        end
     else
-    #  Confirm that the paths are correct
-      UserMailer.new_user_invite(@invite, new_session_path(:invite_token => @invite.token)).deliver #send the invite data to our mailer to deliver the email
-   else
-      # oh no, creating a new invitation failed
-      # Send an alert that says to check the email because there is an error of some sort
-   end
+      alert "something didn't work"
+      # oh no, creating an new invitation failed
+  end
+
 
    def check_user_existence
     recipient = User.find_by_email(email)
-   if recipient
+    if recipient
       self.recipient_id = recipient.id
    end
-
-
 
 end

@@ -17,7 +17,7 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     # @task = current_user.tasks.new#(:quest_id => params[:quest_id])
-    quest = Quest.find(params[:format])
+    quest = Quest.find(params[:quest_id])
     @task = quest.tasks.new
   end
 
