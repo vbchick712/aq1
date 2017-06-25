@@ -51,17 +51,20 @@
 	<li class="collection-item heading"> Participants</li>
 	<% a =0 %>
 	<% @quest.roles.each do |role| %>
-	<% a = a + 1%>
+	<% a += 1%>
 	<% if role.role == false %>
 		<li class="collection-item avatar">
-			<% if a == 2 %>
-				<%= image_tag 'yuna.jpg', class: 'circle'%>
+			<% if a % 2 == 0 %>
+				<%#= image_tag 'happy_group_selfie.jpg', class: 'circle'%>
+				<img src = "http://lorempixel.com/75/75/animals", class: 'circle'/>
 			<% else %>
-				<i class="material-icons circle">perm_identity</i>
+				<img src = "http://lorempixel.com/75/75/cats", class: 'circle'/>
+
+				<!-- <i class="material-icons circle">perm_identity</i> -->
 			<% end %>
 			<h6><%= role.user.name %></h6>
 			<!-- <p><%= role.user.email %></p> -->
-			<p>Pending Acceptance</p>
+			<!-- <p>Invited</p> -->
 		</li>
 	<% end -%>
 <% end -%>
