@@ -7,6 +7,7 @@
 }
 .message{
 	display: none;
+	text-align: center;
 }
 .clue{
 	display: none;
@@ -16,4 +17,32 @@
 }
 .home1234{
 	display: none;
+}
+.initial_box{
+	/*height:300px;*/
+	padding-top: 10px;
+	margin: auto;
+	width: 90%;
+	text-align: center;
+}
+.modal-content-right{
+	display: none;
+}
+.modal-content-wrong{
+	display: none;
+}
+.modal-footer-right{
+	display: none;
+}
+.card{
+	min-height: 400px;
+}
+#show_img{
+	display: block;
+}
+.coyo{
+	display: none;
+}
+.btn-large{
+	display: block;
 }
