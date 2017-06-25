@@ -17,7 +17,7 @@
     <% @questmaster.each do |quest| %>
       <tr>
         <td><strong><%= quest.name %></strong></td>
-        <td><%= quest.start.strftime("%Y-%m-%d") %></td>
+        <td><%= quest.start.strftime("%m-%d") %></td>
         <td><%= quest.start.strftime("%l:%M %P") %></td>
         <td>
           <!-- Dropdown Trigger -->
@@ -50,15 +50,16 @@
     <% @participant.each do |quest| %>
       <tr>
         <td><%= quest.name %></td>
-        <td><%= quest.start.strftime("%Y-%m-%d") %></td>
+        <td><%= quest.start.strftime("%m-%d") %></td>
         <td><%= quest.start.strftime("%l:%M %P") %></td>
         <td>
           <!-- Dropdown Trigger -->
-          <a class='dropdown-button btn' href='#' data-activates='dropdown2'>Options</a>
+          <a class='dropdown-button btn indigo' href='#' data-activates='dropdown2'>Options</a>
           <!-- Dropdown Structure -->
           <ul id='dropdown2' class='dropdown-content'>
-          <% if quest.start <= @time %>
-            <li><a href="">Not Available</a></li>
+          <% if quest.start >= @time %>
+            <li><a class= "indigo-text">No Peeking!!</a></li>
+            <li><a class= "indigo-text"href="#modal_invite">See Invite message</a></li>
           <% else %>
             <li><%= link_to 'Start the Quest!', quests_showtime_path(quest) %></li>
           <% end -%>
@@ -67,8 +68,17 @@
           </td>
       </tr>
       <% x+=1 %>
+      <!-- Modal Structure -->
+  <div id="modal_invite" class="modal">
+    <div class="modal-content">
+      <h4>Invite message</h4>
+      <p><%= quest.invite_msg %></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
     <% end %>
   </tbody>
 </table>
 
-<br>

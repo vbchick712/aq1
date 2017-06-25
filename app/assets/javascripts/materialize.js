@@ -8,7 +8,7 @@ $( document ).on('turbolinks:load', function(){
 
   });
   $(".button-collapse").sideNav();
-
+  $('#modal_invite').modal();
   var card_array = [];
   var clue_array =[];
   var i = 0;
