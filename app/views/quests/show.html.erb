@@ -56,10 +56,9 @@
 		<li class="collection-item avatar">
 			<% if a % 2 == 0 %>
 				<%#= image_tag 'happy_group_selfie.jpg', class: 'circle'%>
-				<img src = "http://lorempixel.com/75/75/animals", class: 'circle'/>
+				<img src = "http://lorempixel.com/75/75/animals/profile_pic", class: 'circle'/>
 			<% else %>
-				<img src = "http://lorempixel.com/75/75/cats", class: 'circle'/>
-
+				<img src = "http://lorempixel.com/75/75/cats/profile_pic", class: 'circle'/>
 				<!-- <i class="material-icons circle">perm_identity</i> -->
 			<% end %>
 			<h6><%= role.user.name %></h6>
