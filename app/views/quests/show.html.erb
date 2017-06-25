@@ -2,9 +2,9 @@
 
 <h6><%= @quest.description%></h6>
 
-<p>Quest Date: <%= @quest.start.strftime("%Y-%m-%d")%> </p>
+<p><strong>Quest Date: </strong><%= @quest.start.strftime("%B %d")%> </p>
 
-<p>Quest Time: <%= @quest.start.strftime("%l:%M %P")%></p>
+<p><strong>Quest Time: </strong><%= @quest.start.strftime("%l:%M %P")%></p>
 
 <p>Invite Message: <%= @quest.invite_msg %></p>
 
@@ -13,6 +13,9 @@
 <p>Final Message: <%= @quest.final_msg %></p>
 
 <p>Total Tasks: <%= @quest.tasks.count %></p>
+<br>
+<%= link_to 'Edit Quest', edit_quest_path(@quest), class:'collection-item btn indigo' %>
+<br>
 <ul id="tabs-swipe-demo" class="tabs ">
 	<% x = 1%>
 	<% @quest.tasks.sort.each do |task| %>
@@ -31,7 +34,7 @@
 	<p></p>
 	<p>Clue 2: <%= task.clue2 %></p>
 	<p></p>
-	<p>Clue 3: <%= task.clue2 %></p>
+	<p>Clue 3: <%= task.clue3 %></p>
 	<p></p>
 	<p>Clue Timer: <%= task.clue_timer %> minutes</p>
 	<p></p>
@@ -67,10 +70,10 @@
 		</li>
 	<% end -%>
 <% end -%>
+<%= link_to 'Add Participant', users_invite_path(@quest), class:'collection-item black-text text-darken-2' %>
+
 </ul>
 <div class="collection">
-<%= link_to 'Edit Quest', edit_quest_path(@quest), class:'collection-item black-text text-darken-2' %> |
-<%= link_to 'All Tasks', quest_tasks_path(@quest), class:'collection-item black-text text-darken-2' %> |
-<%= link_to 'Add Participant', users_invite_path(@quest), class:'collection-item black-text text-darken-2' %> |
+<%= link_to 'All Tasks', quest_tasks_path(@quest), class:'collection-item black-text text-darken-2' %>
 <%= link_to 'Quest Home', quests_path, class:'collection-item black-text text-darken-2' %>
 </div>

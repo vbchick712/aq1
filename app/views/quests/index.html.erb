@@ -1,4 +1,5 @@
-<%= link_to 'New Quest', new_quest_path, class:'waves-effect waves-light btn-flat' %>
+<br>
+<%= link_to 'New Quest', new_quest_path, class:'waves-effect waves-light btn indigo' %>
 
 <h4>Quests I've Created:</h4>
 
@@ -18,11 +19,11 @@
     <% @questmaster.each do |quest| %>
       <tr>
         <td><strong><%= quest.name %></strong></td>
-        <td><%= quest.start.strftime("%Y-%m-%d") %></td>
+        <td><%= quest.start.strftime("%B %d") %></td>
         <td><%= quest.start.strftime("%l:%M %P") %></td>
         <td>
           <!-- Dropdown Trigger -->
-          <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Options</a>
+          <a class='dropdown-button btn indigo' href='#' data-activates='dropdown1'>Options</a>
           <!-- Dropdown Structure -->
           <ul id='dropdown1' class='dropdown-content'>
             <li><%= link_to 'Show', quest %></li>
@@ -36,7 +37,6 @@
     <% end %>
   </tbody>
   </table>
-  <%= link_to 'Create a Quest', new_quest_path %>
   <h4>Quests I'm Participating In:</h4>
     <table class=" highlight bordered">
       <thead>
@@ -51,11 +51,11 @@
     <% @participant.each do |quest| %>
       <tr>
         <td><%= quest.name %></td>
-        <td><%= quest.start.strftime("%Y-%m-%d") %></td>
+        <td><%= quest.start.strftime("%B %d") %></td>
         <td><%= quest.start.strftime("%l:%M %P") %></td>
         <td>
           <!-- Dropdown Trigger -->
-          <a class='dropdown-button btn' href='#' data-activates='dropdown2'>Options</a>
+          <a class='dropdown-button btn indigo' href='#' data-activates='dropdown2'>Options</a>
           <!-- Dropdown Structure -->
           <ul id='dropdown2' class='dropdown-content'>
             <li><%= link_to 'Show', quest %></li>

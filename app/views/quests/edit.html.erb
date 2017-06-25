@@ -1,3 +1,6 @@
+<br>
+<%= link_to 'Quest Home', quests_path, class:'btn waves-effect waves-light indigo' %>
+<br>
 <h4>Edit Quest</h4>
 
 <%= form_for @quest do |f| %>
@@ -33,9 +36,8 @@
 		<%= f.text_field :final_msg %>
 	</div>
 
-	<%= f.submit class:'btn waves-effect waves-light' %>
+	<%= f.submit class:'btn waves-effect waves-light indigo' %>
 	</div>
 
 	<% end %>
 <!-- There is also a link to save the updated quest -->
-<%= link_to 'Quest Home', quests_path, class:'btn waves-effect waves-light' %> |

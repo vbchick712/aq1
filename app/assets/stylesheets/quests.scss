@@ -1,3 +1,22 @@
 // Place all the styles related to the Quests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.dropdown-content li>a {
+  color: #3f51b5;
+}
+
+.picker__date-display {
+  background-color: #3f51b5;
+}
+
+.picker__weekday-display {
+  background-color: #3f51b5;
+}
+
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
+  background-color: #3f51b5;
+}
+
+.btn-flat picker__today {
+  color: #3f51b5;
+}
