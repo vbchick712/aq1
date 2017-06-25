@@ -37,7 +37,7 @@
 .card{
 	min-height: 400px;
 }
-#show_img{
+.show_img{
 	display: block;
 }
 .coyo{
@@ -45,4 +45,7 @@
 }
 .btn-large{
 	display: block;
+}
+.skip{
+	display: none;
 }

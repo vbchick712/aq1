@@ -1,8 +1,8 @@
 <h4><%= @quest.name%></h4>
 <div class="initial_box">
-  <h5>Are you Ready??</h5>
-  <p id ="description"><%= @quest.start_msg %></p>
-  <%= image_tag 'ready.gif', width: "337"%>
+  <h6>Are you Ready??</h6>
+  <h5 id ="description"><%= @quest.start_msg %></h5>
+  <%= image_tag 'ready.gif', width: "303"%>
 </div>
 
 <!-- Loop for totals tasks in a Quests -->
@@ -50,12 +50,21 @@
       <h4>Too bad </h4>
       <p>That is not the correct answer try again</p>
     </div>
+    
     <div class="modal-footer wrong">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" >Ok</a>
     </div>
+    <div class="modal-content skip">
+      <%= image_tag 'wait.gif', width: '252' %>
+      <h4>Are you Sure You want to Skip this Task??</h4>
+      
+    </div>
+    <div class="modal-footer skip">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat " >Ok</a>
+    </div>
   </div>
 	<% end -%>
-  <a href="#" id="show_img" class="waves-effect waves-light btn-large">Start Quest </a>
+  <a href="#" id="show_img" class="waves-effect waves-light btn-large ">Start Quest </a>
   
   <!-- Completing the quest Message -->
   <div class="message">
@@ -67,6 +76,7 @@
   </div>
   <!-- Link To quests index page -->
   <div class="home1234"><%= link_to 'Go to your Quests', quests_path, class: 'waves-effect waves-light btn-large' %></div>
+
   <!-- Modal Trigger -->
   
 
