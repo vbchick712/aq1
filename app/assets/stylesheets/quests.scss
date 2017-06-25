@@ -1,6 +1,30 @@
 // Place all the styles related to the Quests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.quest {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.message {
+  display: none;
+}
+
+.clue {
+  display: none;
+}
+
+.help {
+  display: none;
+}
+
+.home1234 {
+  display: none;
+}
+
 .dropdown-content li>a {
   color: #3f51b5;
 }
