@@ -16,12 +16,50 @@
 /*body{
 	background-color: lightgray;
 }*/
+
+/* SHANNAN COMMENT: I can't get the background image to fill the entire screen There are multiple options for the background image-
+I'm adding a few to easily switch them out I was going for color with the backgrounds but I can't tell which is the best option.
+Can we set the background image for transparency or add a div around the text boxes that is semi-transparent so you can read the text
+boxes and not get frustrated? I couldn't figure out how to do it.*/
+
+html {
+  /*background: url(aq1_footprints2.png) no-repeat center center fixed;*/
+  /*background: url(aq1_orange_background.png) no-repeat center center fixed;*/
+  background: url(aq1_orange_lines_background.png) no-repeat center center fixed;
+  /*background: url(skateboarding_quest.jpg) no-repeat center center fixed;*/
+  /*background: url(birthday_candles.jpg) no-repeat center center fixed;*/
+  /*background: url(priscilla-du-preez-149914.jpg) no-repeat center center fixed;*/
+  background-size: cover;
+}
+
+/*SHANNAN COMMENT: This is for the footer, which is not sticking to the bottom right now so I've commented it out*/
+/*.page-footer {
+  background-color: #3f51b5;
+  clear: both;
+}*/
+
+/*SHANNAN COMMENT: I was hoping to use parallax, but it didn't work yet*/
+/*.parallax-container {
+		 height: 300px;
+	 }*/
+
 td, th {
 	padding: 15px 5px;
-}
+  }
+
 body{
 	font-family: Roboto;
-}
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+
+
 /*.picker__date-display {
 	background-color: gray;
 }
@@ -36,3 +74,31 @@ body{
 	color:black;
 	padding: 0 32px;
 }
+
+/*.container {
+  background-color: #fff3e0;
+}*/
+
+.input-field label {
+  color: #3f51b5;
+}
+
+input[type=text]:focus:not([readonly]) {
+	border-bottom: 1px solid #3f51b5;
+	box-shadow: 0 1px 0 0 #7986cb;
+}
+
+input[type=email]:focus:not([readonly]) {
+	border-bottom: 1px solid #3f51b5;
+	box-shadow: 0 1px 0 0 #7986cb;
+}
+
+input[type=password]:focus:not([readonly]) {
+	border-bottom: 1px solid #3f51b5;
+	box-shadow: 0 1px 0 0 #7986cb;
+}
+
+.btn:hover {
+  background-color: #7986cb !important;
+}
+

@@ -15,8 +15,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
-    </head>
+
   </head>
 
   <body>
@@ -26,12 +25,14 @@
         <a href="#!" class="brand-logo">Amazing Quest</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          
+
           <% if !current_user%>
             <li><%= link_to 'Create an Account', new_user_path,class:'waves-effect'  %></li>
             <li><%= link_to 'Login', new_session_path,class:'waves-effect' %></li>
           <% else %>
             <li><%= link_to current_user.name, quests_path %></li>
+            <!-- SHANNAN COMMENT: We need a way to update User Profiles  -->
+            <!-- <li><%#= link_to 'Edit Profile', edit_user_path(:user_id) %></li> -->
             <li><%= link_to 'Log Out', logout_path, method: "delete",class:'waves-effect' %></li>
             <li class="divider"></li>
           <% end %>
@@ -53,12 +54,41 @@
       </div>
     </nav>
   </header>
+
   <div class="container">
     <%= yield %>
   </div>
-  
       <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-          
   </body>
+
+<!-- SHANNAN COMMENT: this Div is here to try to clear out some coding to get the footer to the bottom -->
+<!-- <div style="clear: both"></div> -->
+
+<!-- SHANNAN COMMENT: This code is directly from the Materialize site. Not sure why it's not working -->
+  <!-- <footer class="page-footer">
+         <div class="container">
+           <div class="row">
+             <div class="col l6 s12">
+               <h6 class="white-text">We love feedback! Tag us on social media at #AmazingQuestCo or send us an email with details about
+               your quest experience or features you'd love to see in this app. You can reach us at amazingquestco@gmail.com.</h6>
+             </div>
+             <div class="col l4 offset-l2 s12">
+               <h5 class="white-text">Get Social!</h5>
+               <ul>
+                 <li><a class="grey-text text-lighten-3" href="http://www.amazingquest.co">Amazing Quest</a></li>
+                 <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/Amazing-Quest-235674516940851/">Facebook</a></li>
+                 <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/amazingquestco/">Instagram</a></li>
+                 <li><a class="grey-text text-lighten-3" href="https://twitter.com/amazingquestco">Twitter</a></li>
+               </ul>
+             </div>
+           </div>
+         </div>
+         <div class="footer-copyright">
+           <div class="container">
+           © 2017 Copyright Amazing Quest, All Rights Reserved.
+           <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+           </div>
+         </div>
+       </footer> -->
 </html>

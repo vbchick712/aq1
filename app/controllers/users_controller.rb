@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    # @user = User.find(params[:id])
   end
 
   # POST /users
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         UserMailer.invite_email(@user).deliver_now
-        format.html { redirect_to users_path, notice: 'User was successfully created.' }
+        format.html { redirect_to quests_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
