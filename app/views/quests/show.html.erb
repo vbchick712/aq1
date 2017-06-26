@@ -6,11 +6,11 @@
 
 <p><strong>Quest Time: </strong><%= @quest.start.strftime("%l:%M %P")%></p>
 
-<p><strong>Invite Message: </strong> (Participants see this once they are invited)<%= @quest.invite_msg %></p>
+<p><strong>Invite Message: </strong> (Participants see this once they are invited) <%= @quest.invite_msg %></p>
 
-<p><strong>Start Message: </strong> (Participants see this as soon as the quest is live)<%= @quest.start_msg %></p>
+<p><strong>Start Message: </strong> (Participants see this as soon as the quest is live) <%= @quest.start_msg %></p>
 
-<p><strong>Final Message: </strong> (Participants see this at the end of the quest)<%= @quest.final_msg %></p>
+<p><strong>Final Message: </strong> (Participants see this at the end of the quest) <%= @quest.final_msg %></p>
 
 <p><strong>Total Tasks: </strong><%= @quest.tasks.count %></p>
 <br>
@@ -58,18 +58,18 @@
 <% end %>
 <ul class="collection">
 	<li class="collection-item heading"> Participants</li>
-	<% a =0 %>
+	<%# a =0 %>
 	<% @quest.roles.each do |role| %>
-	<% a += 1%>
+	<%# a += 1%>
 	<% if role.role == false %>
 		<li class="collection-item avatar">
-			<% if a % 2 == 0 %>
-			<i class="material-icons circle">perm_identity</i>
+			<%# if a % 2 == 0 %>
+			<!-- <i class="material-icons circle">perm_identity</i> -->
 				<%#= image_tag 'happy_group_selfie.jpg', class: 'circle'%>
 				<!-- <img src = "ben.png", class: 'circle'/> -->
-			<% else %>
-				<i class="material-icons circle">perm_identity</i>
-			<% end %>
+			<%# else %>
+				<!-- <i class="material-icons circle">perm_identity</i> -->
+			<%# end %>
 			<h6><%= role.user.name %></h6>
 			<!-- <p><%= role.user.email %></p> -->
 			<!-- <p>Invited</p> -->

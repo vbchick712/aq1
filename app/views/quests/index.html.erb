@@ -6,11 +6,10 @@
 <table class="highlight bordered ">
   <thead>
     <tr>
-      <td>Name</td>
-      <td>Date</td>
-      <td>Time</td>
+      <td><strong>Name</strong></td>
+      <td><strong>Date</strong></td>
+      <td><strong>Time</strong></td>
       <th></th>
-
     </tr>
   </thead>
 
@@ -19,8 +18,8 @@
     <% @questmaster.each do |quest| %>
       <tr>
         <td><strong><%= quest.name %></strong></td>
-        <td><%= quest.start.strftime("%B %d") %></td>
-        <td><%= quest.start.strftime("%l:%M %P") %></td>
+        <td><strong><%= quest.start.strftime("%B %d") %></strong></td>
+        <td><strong><%= quest.start.strftime("%l:%M %P") %></strong></td>
         <td>
           <!-- Dropdown Trigger -->
           <a class='dropdown-button btn indigo' href='#' data-activates='dropdown1'>Options</a>
@@ -41,18 +40,18 @@
     <table class=" highlight bordered">
       <thead>
         <tr>
-          <td>Name</td>
-          <td>Quest Date</td>
-          <td>Quest Time</td>
+          <td><strong>Name</strong></td>
+          <td><strong>Quest Date</strong></td>
+          <td><strong>Quest Time</strong></td>
           <th></th>
         </tr>
       </thead>
 
     <% @participant.each do |quest| %>
       <tr>
-        <td><%= quest.name %></td>
-        <td><%= quest.start.strftime("%B %d") %></td>
-        <td><%= quest.start.strftime("%l:%M %P") %></td>
+        <td><strong><%= quest.name %></strong></td>
+        <td><strong><%= quest.start.strftime("%B %d") %></strong></td>
+        <td><strong><%= quest.start.strftime("%l:%M %P") %></strong></td>
         <td>
           <!-- Dropdown Trigger -->
           <a class='dropdown-button btn indigo' href='#' data-activates='dropdown2'>Options</a>

@@ -5,12 +5,12 @@
 
 	<div class = "input-field col s6">
 
-		<%= f.label :name %>
+		<%= f.label :name, "Task Name (Have fun & be clever!)" %>
 		<%= f.text_field :name %>
 	</div>
 
 	<div class = "input-field col s6">
-		<%= f.label :description %>
+		<%= f.label :description, "Task" %>
 		<%= f.text_field :description %>
 	</div>
 
@@ -30,17 +30,17 @@
   </div>
 
 	<div class = "input-field col s6">
-		<%= f.label :clue_timer, "Timer (minutes)" %>
+		<%= f.label :clue_timer, "Timer (Minutes- this is when the clues will pop up!)" %>
 		<%= f.number_field :clue_timer %>
 	</div>
 
   <div class = "input-field col s6">
-		<%= f.label :answer %>
+		<%= f.label :answer, "Answer/Solution to Complete this Task" %>
 		<%= f.text_field :answer %>
 	</div>
 
   <div class = "input-field col s6">
-		<%= f.label :answer_check, "Exact Answer? (true/false)" %>
+		<%= f.label :answer_check, "Exact Answer? (true/false- If the answer must be exact, enter 'true')" %>
 		<%= f.text_field :answer_check %>
 		<%#= f.label :answer_check %>
 		<%#= f.check_box :answer_check, :class => "checkbox-class" %>
@@ -49,11 +49,11 @@
 	</div>
 
 	<div class = "input-field col s6">
-		<%= f.label :answer_comment %>
+		<%= f.label :answer_comment, "Correct Answer Comment (This pops up after a correct answer is submitted)" %>
 		<%= f.text_field :answer_comment %>
 	</div>
 	<div class = "input-field col s6">
-		<%= f.label :skip_comment %>
+		<%= f.label :skip_comment, "Skip Task Comment (This pops up when the skip task button is selected)" %>
 		<%= f.text_field :skip_comment %>
 	</div>
 
@@ -64,9 +64,9 @@
 
 	<div class = "input-field col s6"></div>
 
-	<%= f.submit 'Add Task',class:'btn waves-effect waves-light indigo'%>
+	<%= f.submit 'Add Task',class:'btn waves-effect indigo'%>
+	<%= link_to 'Return to Quest', quest_path(@quest), class: 'btn waves-effect indigo' %>
+	<%= link_to 'Quest Home', quests_path, class:'collection-item btn indigo' %>
 	</div>
 
 	<% end %>
-
-	<%= link_to 'Return to Quest', quests_path(@quest) %>

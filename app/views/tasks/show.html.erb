@@ -1,29 +1,27 @@
-<h1>SHOW TASKS</h1>
-<p id="notice"><%= notice %></p>
-
-<p>Quest Name: <%= @task.quest.name %></p>
+<p><strong>Quest Name: </strong><%= @task.quest.name %></p>
 <p></p>
-<p>Task name: <%= @task.name %></p>
+<p><strong>Task name: </strong><%= @task.name %></p>
 <p></p>
-<p>Task: <%= @task.description %></p>
+<p><strong>Task: </strong><%= @task.description %></p>
 <p></p>
-<p>Clue 1: <%= @task.clue1 %></p>
+<p><strong>Clue 1: </strong><%= @task.clue1 %></p>
 <p></p>
-<p>Clue 2: <%= @task.clue2 %></p>
+<p><strong>Clue 2: </strong><%= @task.clue2 %></p>
 <p></p>
-<p>Clue 3: <%= @task.clue2 %></p>
+<p><strong>Clue 3: </strong><%= @task.clue3 %></p>
 <p></p>
-<p>Clue Timer: <%= @task.clue_timer %></p>
+<p><strong>Clue Timer: </strong><%= @task.clue_timer %> min.</p>
 <p></p>
-<p>Answer: <%= @task.answer %></p>
+<p><strong>Answer: </strong><%= @task.answer %></p>
 <p></p>
-<p>Insert checkbox to confirm if answer must be exact</p>
+<p><strong>Exact Answer Required: (true/false) </strong><%= @task.answer_check %></p>
 <p></p>
-<p>Correct Answer Comment: <%= @task.answer_comment %></p>
+<p><strong>Correct Answer Comment: </strong><%= @task.answer_comment %></p>
 <p></p>
-<p>Skip Task Comment: <%= @task.skip_comment %></p>
+<p><strong>Skip Task Comment: </strong><%= @task.skip_comment %></p>
 <p></p>
 
-<%= link_to 'Add Task', new_quest_task_path %> |
-<%= link_to 'Edit Tasks', quest_tasks_path %> |
-<%= link_to 'Return to Quest', quests_path(@quest) %>
+<%= link_to 'Add Task', new_quest_task_path, class:'waves-effect waves-light btn indigo' %>
+<%= link_to 'Edit Tasks', quest_tasks_path, class:'waves-effect waves-light btn indigo' %>
+<%= link_to 'Return to Quest', quest_path(@quest), class:'waves-effect waves-light btn indigo' %>
+<%= link_to 'Quest Home', quests_path(@quest), class:'waves-effect waves-light btn indigo' %>

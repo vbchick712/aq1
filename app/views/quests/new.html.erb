@@ -10,47 +10,42 @@
     </div>
   <% end %>
 <h4>New Quest</h4>
-<%= link_to 'Back', quests_path, class:'right waves-effect waves-light btn' %>
+<%= link_to 'Back', quests_path, class:'right waves-effect indigo btn' %>
 <%= form_for @quest do |f| %>
 
 	<div class="input-field col s6">
-        <!-- <input id="last_name" type="text" class="validate">
-        <label for="last_name">Last Name</label> -->
-        <%= f.label :name, class:'active' %>
-        <%= f.text_field :name, class:'validate' %>
+    <%= f.label :name, "Quest Name (Have FUN- get creative!)"%>
+    <%= f.text_field :name %>
 
     </div>
 	<div class="input-field col s6">
-		<%= f.label :start %>
+		<%= f.label :start, "Quest Date" %>
 		<%= f.date_field :start,{class: 'datepicker'} %>
 	</div>
 	<div class="field col s6">
-		<%= f.label :start, "HH:MM" %>
+		<%= f.label :start, "Time (HH:MM AM/PM)" %>
 		<%= f.time_field :start, :ignore_date => true %>
 
 	</div>
 
 	<div class="input-field col s6">
-		<%= f.label :description %>
+		<%= f.label :description, "Short Description of the Quest (A brief overview)" %>
 		<%= f.text_field :description %>
 	</div>
 	<div class="input-field col s6">
-		<%= f.label :invite_msg %>
+		<%= f.label :invite_msg, "Invite Message (Use this to let participants know what to expect, where the quest will start, what to wear or what to bring, etc.)" %>
 		<%= f.text_field :invite_msg %>
 	</div>
 	<div class="input-field col s6">
-		<%= f.label :start_msg %>
+		<%= f.label :start_msg, "Start Message (This message is visible once the quest starts)" %>
 		<%= f.text_field :start_msg %>
 	</div>
 	<div class="input-field col s6">
-		<%= f.label :final_msg %>
+		<%= f.label :final_msg, "Final Message (This is the final message to participants, so make sure to pass on what to do next!)"%>
 		<%= f.text_field :final_msg %>
 	</div>
 
-	<%= f.submit class:'btn waves-effect waves-light'%>
+	<%= f.submit class:'btn waves-effect indigo'%>
 	</div>
 
 	<% end %>
-
-	<%= link_to 'Return to Quest', quests_path(@quest), class:'btn waves-effect waves-light' %>
-	<%= link_to 'Log Out', logout_path, method: "delete", class:'btn waves-effect waves-light' %>
