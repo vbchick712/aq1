@@ -101,4 +101,23 @@ input[type=password]:focus:not([readonly]) {
 .btn:hover {
   background-color: #7986cb !important;
 }
+* {
+  font-family: Verdana;
+}
+.container {
+  padding: 10px;
+  background-color: rgba(255,255,255,0.60);
+}
+.col{
+  background-color: rgba(255,255,255,0.60);
+}
+.collection{
+  border: none;
+}
+.collection .collection-item{
+  background-color: rgba(255,255,255,0.60);
 
+}
+.tabs{
+  background-color: rgba(255,255,255,0.30);
+}

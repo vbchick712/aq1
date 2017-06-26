@@ -14,11 +14,10 @@
 
 <p><strong>Total Tasks: </strong><%= @quest.tasks.count %></p>
 
-<div class="collection">
 <%= link_to 'Edit Quest', edit_quest_path(@quest), class:'collection-item btn indigo' %>
-</div>
+<p></p>
 
-<ul id="tabs-swipe-demo" class="tabs ">
+<ul id="tabs-swipe-demo" class="tabs">
 	<% x = 1%>
 	<% @quest.tasks.sort.each do |task| %>
 		<% id = "#test-swipe-" + task.id.to_s %>
@@ -31,7 +30,7 @@
 </ul>
 <% @quest.tasks.each do |task| %>
 <% id = 'test-swipe-' + task.id.to_s %>
-<div id=<%=id%> class="col s12 #f5f5f5 grey lighten-4">
+<div id=<%=id%> class="col s12">
 	<h5><strong><%= task.name %></strong></h5>
 	<p><strong>Task: </strong><%= task.description %></p>
 	<p></p>
@@ -49,21 +48,20 @@
 	<p></p>
 	<p><strong>Skip Task Comment: </strong><%= task.skip_comment %></p>
 	<p></p>
-	<div class="collection">
+	
 		<%= link_to 'Add Task', new_quest_task_path(@quest), class:'collection-item btn indigo' %>
 		<!-- SHANNAN COMMENT: When you select anything other than the 1st task, this link throws an error  -->
 		<%= link_to 'Edit Task', edit_quest_task_path(task.id), class:'collection-item btn indigo' %>
 		<%= link_to 'All Tasks', quest_tasks_path(@quest), class:'collection-item btn indigo' %>
-	</div>
 </div>
 <% end %>
 <ul class="collection">
-	<li class="collection-item heading"> Participants</li>
+	<li class="collection-item"><h5>Participants</h5></li>
 	<%# a =0 %>
 	<% @quest.roles.each do |role| %>
 	<%# a += 1%>
 	<% if role.role == false %>
-		<li class="collection-item avatar">
+		<li class="collection-item">
 			<%# if a % 2 == 0 %>
 			<!-- <i class="material-icons circle">perm_identity</i> -->
 				<%#= image_tag 'happy_group_selfie.jpg', class: 'circle'%>
@@ -77,7 +75,7 @@
 		</li>
 	<% end -%>
 <% end -%>
-<%= link_to 'Add Participant', users_invite_path(@quest), class:'collection-item black-text text-darken-2'  %>
+
 </ul>
 <%= link_to 'Add Participant', users_invite_path(@quest), class:'collection-item btn indigo' %>
 
