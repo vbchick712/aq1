@@ -15,3 +15,8 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+// SHANNAN COMMENT: This is if we can get parallax to work
+// $(document).ready(function(){
+//      $('.parallax').parallax();
+//    });
