@@ -1,29 +1,68 @@
 <div class="container">
+
 <h4>Edit Task</h4>
 
-<p><strong>Quest Name: </strong><%= @task.quest.name %></p>
-<p></p>
-<p><strong>Task name: </strong><%= @task.name %></p>
-<p></p>
-<p><strong>Task: </strong><%= @task.description %></p>
-<p></p>
-<p><strong>Clue 1: </strong><%= @task.clue1 %></p>
-<p></p>
-<p><strong>Clue 2: </strong><%= @task.clue2 %></p>
-<p></p>
-<p><strong>Clue 3: </strong><%= @task.clue3 %></p>
-<p></p>
-<p><strong>Clue Timer: </strong><%= @task.clue_timer %></p>
-<p></p>
-<p><strong>Answer: </strong><%= @task.answer %></p>
-<p></p>
-<p><strong>Exact Answer: (true/false)</strong><%= @task.answer_check %></p>
-<p></p>
-<p><strong>Correct Answer Comment: </strong><%= @task.answer_comment %></p>
-<p></p>
-<p><strong>Skip Task Comment: </strong><%= @task.skip_comment %></p>
-<p></p>
 
-<%= link_to 'Show', quest_task_path(@task.quest, @task), class: 'waves-effect indigo btn' %>
-<%= link_to 'Return to Quest', quest_path(@quest), class: 'waves-effect indigo btn' %>
+<%= form_with scope: :task, url: quest_task_path do |form| %>
+
+
+  <div class="field">
+    <%= form.label :name, "Task Name (Have fun & be clever!)" %>
+    <%= form.text_field :name, id: :task_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, "Task (Have FUN with this!)" %>
+    <%= form.text_field :description, id: :task_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answer, "Answer (What you'll accept to complete this task)" %>
+    <%= form.text_field :answer, id: :task_answer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clue1, "Clue 1" %>
+    <%= form.text_field :clue1, id: :task_clue1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clue2, "Clue 2" %>
+    <%= form.text_field :clue2, id: :task_clue2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clue3, "Clue 3" %>
+    <%= form.text_field :clue3, id: :task_clue3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clue_timer, "Timer (Minutes- this is when the clues will pop up!)" %>
+    <%= form.text_field :clue_timer, id: :task_clue_timer %>
+  </div>
+
+  <div class = "field">
+		<%= form.label :answer_check, "Exact Answer? (true/false- If the answer must be exact, enter 'true')" %>
+		<%= form.text_field :answer_check %>
+	</div>
+
+
+  <div class="field">
+    <%= form.label :answer_comment, "Answer Comment (This pops up when a correct answer is submitted)" %>
+    <%= form.text_field :answer_comment, id: :task_answer_comment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :skip_comment, "Exact Answer? (true/false- If the answer must be exact, enter 'true')" %>
+    <%= form.text_field :skip_comment, id: :task_skip_comment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:'btn waves-effect indigo' %>
+    <%= link_to 'Show', quest_task_path(@task.quest, @task), class: 'waves-effect indigo btn' %>
+    <%= link_to 'Return to Quest', quest_path(@quest), class: 'waves-effect indigo btn' %>
+  </div>
+<% end %>
+
+
 </div>
