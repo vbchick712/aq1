@@ -48,7 +48,8 @@ td, th {
   }
 
 body{
-	font-family: Roboto;
+	/*font-family: Roboto;*/
+  font-family: 'Tauri', sans-serif;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -57,7 +58,6 @@ body{
   main {
     flex: 1 0 auto;
   }
-
 
 
 /*.picker__date-display {
