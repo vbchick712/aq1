@@ -17,9 +17,18 @@
 	background-color: lightgray;
 }*/
 
-/* SHANNAN COMMENT: I can't get the background image to fill the entire screen */
+/* SHANNAN COMMENT: I can't get the background image to fill the entire screen There are multiple options for the background image-
+I'm adding a few to easily switch them out I was going for color with the backgrounds but I can't tell which is the best option.
+Can we set the background image for transparency or add a div around the text boxes that is semi-transparent so you can read the text
+boxes and not get frustrated? I couldn't figure out how to do it.*/
+
 html {
-  background: url(aq1_footprints2.png) no-repeat center center fixed;
+  /*background: url(aq1_footprints2.png) no-repeat center center fixed;*/
+  /*background: url(aq1_orange_background.png) no-repeat center center fixed;*/
+  background: url(aq1_orange_lines_background.png) no-repeat center center fixed;
+  /*background: url(skateboarding_quest.jpg) no-repeat center center fixed;*/
+  /*background: url(birthday_candles.jpg) no-repeat center center fixed;*/
+  /*background: url(priscilla-du-preez-149914.jpg) no-repeat center center fixed;*/
   background-size: cover;
 }
 
