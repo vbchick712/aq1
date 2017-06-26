@@ -1,3 +1,4 @@
+<div class="container">
 <% if @quest.errors.any? %>
     <div id="error_explanation">
       <p><%= pluralize(@quest.errors.count, "field") %> is required to create a Quest:</p>
@@ -49,3 +50,4 @@
 	</div>
 
 	<% end %>
+</div>

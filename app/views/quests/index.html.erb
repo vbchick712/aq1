@@ -1,3 +1,4 @@
+<div class="container">
 <br>
 <%= link_to 'New Quest', new_quest_path, class:'waves-effect waves-light btn indigo' %>
 
@@ -54,18 +55,20 @@
         <td><strong><%= quest.start.strftime("%l:%M %P") %></strong></td>
         <td>
           <!-- Dropdown Trigger -->
-          <a class='dropdown-button btn indigo' href='#' data-activates='dropdown2'>Options</a>
-          <!-- Dropdown Structure -->
-          <ul id='dropdown2' class='dropdown-content'>
-          <% if quest.start >= @time %>
-            <li><a class= "indigo-text">No Peeking!!</a></li>
-            <li><a class= "indigo-text"href="#modal_invite">See Invite message</a></li>
+          
+          <% if quest.start > @time %>
+            <!-- Dropdown Structure -->
+            <ul >
+              
+              <li><a class= "waves-effect waves-light btn indigo" href="#modal_invite">See Invite message</a></li>
+            </ul>
           <% else %>
-            <li><%= link_to 'Start the Quest!', quests_showtime_path(quest) %></li>
-          <% end -%>
-            
-          </ul>
-          </td>
+            <!-- Dropdown Structure -->
+            <ul >
+              <li><%= link_to 'Start the Quest!', quests_showtime_path(quest), class: 'waves-effect waves-light btn indigo' %></li>
+            </ul>
+          <% end %>
+        </td>
       </tr>
       <% x+=1 %>
       <!-- Modal Structure -->
@@ -78,6 +81,7 @@
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
   </div>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
+</div>

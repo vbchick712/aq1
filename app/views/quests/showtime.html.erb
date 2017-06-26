@@ -1,7 +1,8 @@
-<h4><%= @quest.name%></h4>
+<div class="container">
+<h5><%= @quest.name%></h5>
 <div class="initial_box">
-  <h6>Are you Ready??</h6>
-  <h5 id ="description"><%= @quest.start_msg %></h5>
+  <h5>Are you Ready??</h5>
+  <p id ="description"><%= @quest.start_msg %></p>
   <%= image_tag 'ready.gif', width: "303"%>
 </div>
 
@@ -23,7 +24,7 @@
         <%= hidden_field_tag "id", task.id %>
         <%= hidden_field_tag 'taskanswer', task.answer %>
         <%= hidden_field_tag 'timer', task.clue_timer %>
-        <a href="#modal1" id="x" class="waves-effect waves-light btn-large check_answer">check Answer </a>
+        <a href="#modal1" id="x" class="waves-effect waves-light btn indigo check_answer">check Answer </a>
         
         <a href ="#modal_skip" class="btn waves-effect indigo waves-light skip-task " >Skip Task<i class="material-icons right">skip_next</i>
         </a>
@@ -36,8 +37,8 @@
       
     </div>
     <div class="modal-footer skip">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat " >No, I will go on!</a>
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat " >Skip</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-indigo btn-flat " >No, I will go on!</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-indigo btn-flat " >Skip</a>
     </div>
   </div>
     <div class="card-reveal centered">
@@ -71,19 +72,19 @@
   </div>
 	<% end -%>
   
-  <a href="#" id="show_img" class="waves-effect waves-light btn-large ">Start Quest </a>
+  <a href="#" id="show_img" class="waves-effect indigo waves-light btn ">Start Quest </a>
   
   <!-- Completing the quest Message -->
   <div class="message">
     <div class="card-image waves-effect waves-block waves-light">
       <%= image_tag 'congrats2.gif', width: "289"%>
       <!-- <img class="activator" src="images/office.jpg"> -->
-      <h4><%= @quest.final_msg %></h4>
+      <strong><%= @quest.final_msg %></strong>
     </div>
   </div>
   <!-- Link To quests index page -->
-  <div class="home1234"><%= link_to 'Go to your Quests', quests_path, class: 'waves-effect waves-light btn-large' %></div>
-
+  <div class="home1234"><%= link_to 'Go to your Quests', quests_path, class: 'waves-effect waves-light btn indigo' %></div>
+</div>
   
   
 

@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_with scope: :task, url: quest_task_path do |form| %>
   <% if task.errors.any? %>
     <div id="error_explanation">
@@ -60,3 +61,4 @@
     <%= form.submit class:'btn waves-effect waves-light' %>
   </div>
 <% end %>
+</div>

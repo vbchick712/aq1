@@ -15,7 +15,7 @@
 
     @questmaster = quests_true.map {|q| q.quest}
     @participant = quests_false.map {|q| q.quest}
-    @time = Time.now
+    @time = Time.now.utc
   end
 
   # GET /quests/1

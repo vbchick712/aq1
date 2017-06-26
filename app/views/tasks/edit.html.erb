@@ -1,3 +1,4 @@
+<div class="container">
 <h4>Edit Task</h4>
 
 <p><strong>Quest Name: </strong><%= @task.quest.name %></p>
@@ -25,3 +26,4 @@
 
 <%= link_to 'Show', quest_task_path(@task.quest, @task), class: 'waves-effect indigo btn' %>
 <%= link_to 'Return to Quest', quest_path(@quest), class: 'waves-effect indigo btn' %>
+</div>
