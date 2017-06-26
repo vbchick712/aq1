@@ -24,6 +24,12 @@
       # @quest = current_user.quests.where(user_id: params[:id])
       @quest = Quest.find(params[:id])
       @tasks = @quest.tasks
+
+      # This code pulls the Participants Names and shows them on the Quest View
+      @quest_participants = Quest.find(params[:id]).roles.select do |r|
+        r.role == false
+      end
+      @participants = @quest_participants.map {|u| u.user.name}
   end
 
   # GET /quests/new

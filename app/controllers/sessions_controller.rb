@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   	 return render action: 'new' unless @user
 
   	 session[:user_id] = @user.id
-  	 redirect_to users_path
+  	 redirect_to quests_path(@user)
   	end
 
     def destroy

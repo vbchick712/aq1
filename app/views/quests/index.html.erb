@@ -1,13 +1,14 @@
-<p id="notice"><%= notice %></p>
-<%= link_to 'New Quest', new_quest_path, class:'waves-effect waves-light btn-flat' %>
-<h4>Quests As QM</h4>
+<br>
+<%= link_to 'New Quest', new_quest_path, class:'waves-effect waves-light btn indigo' %>
+
+<h4>Quests I've Created:</h4>
 
 <table class="highlight bordered ">
   <thead>
     <tr>
-      <td>Name</td>
-      <td>Quest Date</td>
-      <td>Quest Time</td>
+      <td><strong>Name</strong></td>
+      <td><strong>Date</strong></td>
+      <td><strong>Time</strong></td>
       <th></th>
     </tr>
   </thead>
@@ -17,41 +18,40 @@
     <% @questmaster.each do |quest| %>
       <tr>
         <td><strong><%= quest.name %></strong></td>
-        <td><%= quest.start.strftime("%B %d") %></td>
-        <td><%= quest.start.strftime("%l:%M %P") %></td>
+        <td><strong><%= quest.start.strftime("%B %d") %></strong></td>
+        <td><strong><%= quest.start.strftime("%l:%M %P") %></strong></td>
         <td>
           <!-- Dropdown Trigger -->
-          <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Options</a>
+          <a class='dropdown-button btn indigo' href='#' data-activates='dropdown1'>Options</a>
           <!-- Dropdown Structure -->
           <ul id='dropdown1' class='dropdown-content'>
             <li><%= link_to 'Show', quest %></li>
             <li class="divider"></li>
             <li><%= link_to 'Edit', edit_quest_path(quest) %></li>
             <li class="divider"></li>
-            <li><%= link_to 'Destroy', quest, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <li><%= link_to 'Destroy', quest, method: :delete, data: { confirm: 'Are you sure? Once you destroy a quest it is gone forever!' } %></li>
           </ul>
           </td>
       </tr>
     <% end %>
   </tbody>
   </table>
-
-<h4>Quest as Participant</h4>
+  <h4>Quests I'm Participating In:</h4>
     <table class=" highlight bordered">
       <thead>
         <tr>
-          <td>Name</td>
-          <td>Quest Date</td>
-          <td>Quest Time</td>
+          <td><strong>Name</strong></td>
+          <td><strong>Quest Date</strong></td>
+          <td><strong>Quest Time</strong></td>
           <th></th>
         </tr>
       </thead>
     <% x=0%>
     <% @participant.each do |quest| %>
       <tr>
-        <td><%= quest.name %></td>
-        <td><%= quest.start.strftime("%B %d") %></td>
-        <td><%= quest.start.strftime("%l:%M %P") %></td>
+        <td><strong><%= quest.name %></strong></td>
+        <td><strong><%= quest.start.strftime("%B %d") %></strong></td>
+        <td><strong><%= quest.start.strftime("%l:%M %P") %></strong></td>
         <td>
           <!-- Dropdown Trigger -->
           <a class='dropdown-button btn indigo' href='#' data-activates='dropdown2'>Options</a>
@@ -81,4 +81,3 @@
     <% end %>
   </tbody>
 </table>
-

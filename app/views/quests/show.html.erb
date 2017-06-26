@@ -1,70 +1,87 @@
-<p id="notice"><%= notice %></p>
-
 <h4><%= @quest.name %></h4>
-<strong><%= @quest.description%></strong>
-<p>Quest Date: <%= @quest.start.strftime("%B %d")%> </p>
-<p>Quest Time: <%= @quest.start.strftime("%l:%M %P")%></p>
-<p>Invite Message: <%= @quest.invite_msg %></p>
-<p>Start Message: <%= @quest.start_msg %></p>
-<p>Final Message: <%= @quest.final_msg %></p>
-<p>Total Tasks: <%= @quest.tasks.count %></p>
+
+<h6><%= @quest.description%></h6>
+
+<p><strong>Quest Date: </strong><%= @quest.start.strftime("%B %d")%> </p>
+
+<p><strong>Quest Time: </strong><%= @quest.start.strftime("%l:%M %P")%></p>
+
+<p><strong>Invite Message: </strong> (Participants see this once they are invited) <%= @quest.invite_msg %></p>
+
+<p><strong>Start Message: </strong> (Participants see this as soon as the quest is live) <%= @quest.start_msg %></p>
+
+<p><strong>Final Message: </strong> (Participants see this at the end of the quest) <%= @quest.final_msg %></p>
+
+<p><strong>Total Tasks: </strong><%= @quest.tasks.count %></p>
+
 <div class="collection">
-	<%= link_to 'Edit Quest', edit_quest_path(@quest), class:'collection-item black-text text-darken-2' %>
-	<%= link_to 'Quest Home', quests_path, class:'collection-item black-text text-darken-2' %>
+<%= link_to 'Edit Quest', edit_quest_path(@quest), class:'collection-item btn indigo' %>
 </div>
+
 <ul id="tabs-swipe-demo" class="tabs ">
 	<% x = 1%>
 	<% @quest.tasks.sort.each do |task| %>
 		<% id = "#test-swipe-" + task.id.to_s %>
-		<li class="tab col s3 "><a href=<%= id%> class="black-text text-darken-2">Task <%= x%> </a></li>
-		<% x +=1 %>	
+		<!-- ******************************************************************** -->
+		<!-- SHANNAN COMMENT: THIS CODE DOESN'T LOOK RIGHT -->
+		<li class="tab col s3 "><a href=<%= id %> class:'collection-item btn indigo'>Task <%= x %> </a></li>
+		<!-- ******************************************************************** -->
+		<% x +=1 %>
     <% end %>
 </ul>
 <% @quest.tasks.each do |task| %>
 <% id = 'test-swipe-' + task.id.to_s %>
 <div id=<%=id%> class="col s12 #f5f5f5 grey lighten-4">
-	<p><%= task.name %></p>
-	<p>Task: <%= task.description %></p>
+	<h5><strong><%= task.name %></strong></h5>
+	<p><strong>Task: </strong><%= task.description %></p>
 	<p></p>
-	<p>Clue 1: <%= task.clue1 %></p>
+	<p><strong>Clue 1: </strong><%= task.clue1 %></p>
 	<p></p>
-	<p>Clue 2: <%= task.clue2 %></p>
+	<p><strong>Clue 2: </strong><%= task.clue2 %></p>
 	<p></p>
-	<p>Clue 3: <%= task.clue3 %></p>
+	<p><strong>Clue 3: </strong><%= task.clue3 %></p>
 	<p></p>
-	<p>Clue Timer: <%= task.clue_timer %> minutes</p>
+	<p><strong>Clue Timer: </strong><%= task.clue_timer %> minutes</p>
 	<p></p>
-	<p>Answer: <%= task.answer %></p>
+	<p><strong>Answer: </strong><%= task.answer %></p>
 	<p></p>
-	<p>Correct Answer Comment: <%= task.answer_comment %></p>
+	<p><strong>Correct Answer Comment: </strong><%= task.answer_comment %></p>
 	<p></p>
-	<p>Skip Task Comment: <%= task.skip_comment %></p>
+	<p><strong>Skip Task Comment: </strong><%= task.skip_comment %></p>
 	<p></p>
 	<div class="collection">
-		<%= link_to 'Edit Tasks', edit_task_path(task.id), class:'collection-item black-text text-darken-2' %>
-		<%= link_to 'Add Task', new_task_path(@quest), class:'collection-item black-text text-darken-2' %>
+		<%= link_to 'Add Task', new_quest_task_path(@quest), class:'collection-item btn indigo' %>
+		<!-- SHANNAN COMMENT: When you select anything other than the 1st task, this link throws an error  -->
+		<%= link_to 'Edit Task', edit_quest_task_path(task.id), class:'collection-item btn indigo' %>
+		<%= link_to 'All Tasks', quest_tasks_path(@quest), class:'collection-item btn indigo' %>
 	</div>
 </div>
 <% end %>
-<ul class="collection">	
+<ul class="collection">
 	<li class="collection-item heading"> Participants</li>
-	<% a =0 %>
+	<%# a =0 %>
 	<% @quest.roles.each do |role| %>
-	<% a = a + 1%>
+	<%# a += 1%>
 	<% if role.role == false %>
 		<li class="collection-item avatar">
-			<% if a == 2 %>
-				<%= image_tag 'yuna.jpg', class: 'circle'%>
-			<% else %>
-				<i class="material-icons circle">perm_identity</i>
-			<% end %>
+			<%# if a % 2 == 0 %>
+			<!-- <i class="material-icons circle">perm_identity</i> -->
+				<%#= image_tag 'happy_group_selfie.jpg', class: 'circle'%>
+				<!-- <img src = "ben.png", class: 'circle'/> -->
+			<%# else %>
+				<!-- <i class="material-icons circle">perm_identity</i> -->
+			<%# end %>
 			<h6><%= role.user.name %></h6>
 			<!-- <p><%= role.user.email %></p> -->
-			<p>Pending Acceptance</p>
+			<!-- <p>Invited</p> -->
 		</li>
-			
-	<% end -%>	
-
+	<% end -%>
 <% end -%>
 <%= link_to 'Add Participant', users_invite_path(@quest), class:'collection-item black-text text-darken-2'  %>
 </ul>
+<%= link_to 'Add Participant', users_invite_path(@quest), class:'collection-item btn indigo' %>
+
+
+<!-- <div class="collection"> -->
+<%= link_to 'Quest Home', quests_path, class:'collection-item btn indigo' %>
+<!-- </div> -->

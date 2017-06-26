@@ -1,6 +1,27 @@
-<h4>Editing Task</h4>
+<h4>Edit Task</h4>
 
-<%= render 'form', task: @task %>
+<p><strong>Quest Name: </strong><%= @task.quest.name %></p>
+<p></p>
+<p><strong>Task name: </strong><%= @task.name %></p>
+<p></p>
+<p><strong>Task: </strong><%= @task.description %></p>
+<p></p>
+<p><strong>Clue 1: </strong><%= @task.clue1 %></p>
+<p></p>
+<p><strong>Clue 2: </strong><%= @task.clue2 %></p>
+<p></p>
+<p><strong>Clue 3: </strong><%= @task.clue3 %></p>
+<p></p>
+<p><strong>Clue Timer: </strong><%= @task.clue_timer %></p>
+<p></p>
+<p><strong>Answer: </strong><%= @task.answer %></p>
+<p></p>
+<p><strong>Exact Answer: (true/false)</strong><%= @task.answer_check %></p>
+<p></p>
+<p><strong>Correct Answer Comment: </strong><%= @task.answer_comment %></p>
+<p></p>
+<p><strong>Skip Task Comment: </strong><%= @task.skip_comment %></p>
+<p></p>
 
-
-<%= link_to 'Back', quest_path(@task.quest), class: 'waves-effect waves-teal btn-flat' %>
+<%= link_to 'Show', quest_task_path(@task.quest, @task), class: 'waves-effect indigo btn' %>
+<%= link_to 'Return to Quest', quest_path(@quest), class: 'waves-effect indigo btn' %>
