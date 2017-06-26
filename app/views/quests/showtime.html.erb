@@ -25,10 +25,21 @@
         <%= hidden_field_tag 'timer', task.clue_timer %>
         <a href="#modal1" id="x" class="waves-effect waves-light btn-large check_answer">check Answer </a>
         
-        <button class="btn waves-effect indigo waves-light skip-task " >Skip Task<i class="material-icons right">skip_next</i>
-  </button>
+        <a href ="#modal_skip" class="btn waves-effect indigo waves-light skip-task " >Skip Task<i class="material-icons right">skip_next</i>
+        </a>
       </div>
     </div>
+    <div id="modal_skip" class="modal">
+    <div class="modal-content skip">
+      <%= image_tag 'wait.gif', width: '252' %>
+      <h4><%= task.skip_comment%></h4>
+      
+    </div>
+    <div class="modal-footer skip">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat " >No, I will go on!</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat " >Skip</a>
+    </div>
+  </div>
     <div class="card-reveal centered">
     	<%= image_tag 'ben-white-178537.jpg', width: '289'%>
       <span class="card-title grey-text text-darken-4">New Clue<i class="material-icons right">close</i></span>
@@ -46,7 +57,7 @@
       <p><%= task.answer_comment %></p>
     </div>
     <div class="modal-footer right1">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" >Agree</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" >Close</a>
     </div>
     <div class="modal-content wrong">
       <%= image_tag 'Marty-McFly.gif', width: '252' %>
@@ -57,16 +68,9 @@
     <div class="modal-footer wrong">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" >Ok</a>
     </div>
-    <div class="modal-content skip">
-      <%= image_tag 'wait.gif', width: '252' %>
-      <h4>Are you Sure You want to Skip this Task??</h4>
-      
-    </div>
-    <div class="modal-footer skip">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat " >Ok</a>
-    </div>
   </div>
 	<% end -%>
+  
   <a href="#" id="show_img" class="waves-effect waves-light btn-large ">Start Quest </a>
   
   <!-- Completing the quest Message -->
@@ -80,7 +84,7 @@
   <!-- Link To quests index page -->
   <div class="home1234"><%= link_to 'Go to your Quests', quests_path, class: 'waves-effect waves-light btn-large' %></div>
 
-  <!-- Modal Trigger -->
+  
   
 
   

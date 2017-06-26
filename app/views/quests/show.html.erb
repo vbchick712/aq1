@@ -2,7 +2,7 @@
 
 <h4><%= @quest.name %></h4>
 <strong><%= @quest.description%></strong>
-<p>Quest Date: <%= @quest.start.strftime("%Y-%m-%d")%> </p>
+<p>Quest Date: <%= @quest.start.strftime("%B %d")%> </p>
 <p>Quest Time: <%= @quest.start.strftime("%l:%M %P")%></p>
 <p>Invite Message: <%= @quest.invite_msg %></p>
 <p>Start Message: <%= @quest.start_msg %></p>
@@ -62,7 +62,9 @@
 			<!-- <p><%= role.user.email %></p> -->
 			<p>Pending Acceptance</p>
 		</li>
-		<%= link_to 'Add Participant', users_invite_path(@quest), class:'collection-item black-text text-darken-2'  %>
+			
 	<% end -%>	
+
 <% end -%>
+<%= link_to 'Add Participant', users_invite_path(@quest), class:'collection-item black-text text-darken-2'  %>
 </ul>

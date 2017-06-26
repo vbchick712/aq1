@@ -17,7 +17,7 @@
     <% @questmaster.each do |quest| %>
       <tr>
         <td><strong><%= quest.name %></strong></td>
-        <td><%= quest.start.strftime("%m-%d") %></td>
+        <td><%= quest.start.strftime("%B %d") %></td>
         <td><%= quest.start.strftime("%l:%M %P") %></td>
         <td>
           <!-- Dropdown Trigger -->
@@ -50,14 +50,14 @@
     <% @participant.each do |quest| %>
       <tr>
         <td><%= quest.name %></td>
-        <td><%= quest.start.strftime("%m-%d") %></td>
+        <td><%= quest.start.strftime("%B %d") %></td>
         <td><%= quest.start.strftime("%l:%M %P") %></td>
         <td>
           <!-- Dropdown Trigger -->
           <a class='dropdown-button btn indigo' href='#' data-activates='dropdown2'>Options</a>
           <!-- Dropdown Structure -->
           <ul id='dropdown2' class='dropdown-content'>
-          <% if quest.start >= @time %>
+          <% if quest.start <= @time %>
             <li><a class= "indigo-text">No Peeking!!</a></li>
             <li><a class= "indigo-text"href="#modal_invite">See Invite message</a></li>
           <% else %>
