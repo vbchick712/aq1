@@ -32,6 +32,7 @@ html {
   background-size: cover;
 }
 
+
 /*SHANNAN COMMENT: This is for the footer, which is not sticking to the bottom right now so I've commented it out*/
 /*.page-footer {
   background-color: #3f51b5;
@@ -47,8 +48,7 @@ td, th {
 	padding: 15px 5px;
   }
 
-body{
-	/*font-family: Roboto;*/
+body {
   font-family: 'Overlock', cursive;
   display: flex;
   min-height: 100vh;
@@ -60,7 +60,7 @@ body{
   }
 
   strong {
-    font-weight: bold;
+    font-weight: bold !important;
   }
 
 
@@ -71,6 +71,7 @@ body{
 .picker__weekday-display {
 	background-color: #000000;
 }*/
+
 .slider{
 	overflow: hidden;
 	z-index: -1;
@@ -105,9 +106,6 @@ input[type=password]:focus:not([readonly]) {
 
 .btn:hover {
   background-color: #7986cb !important;
-}
-* {
-  font-family: Verdana;
 }
 
 .col{
