@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create!([
-  {name: "Adam", email: "adamin@gmail.com", password_digest: BCrypt::Password.create('a')},
+  {name: "Adam", email: "adamin@gmail.com", password_digest: BCrypt::Password.create('aaaaaaaa')},
   {name: "Ben", email: "ben@gmail.com", password_digest: BCrypt::Password.create('a')},
-  {name: "Amy", email: "amy@gmail.com", password_digest: BCrypt::Password.create('a')},
+  {name: "Amy", email: "amy@gmail.com", password_digest: BCrypt::Password.create('aaaaaaaa')},
   {name: "Sara", email: "sara@gmail.com", password_digest: BCrypt::Password.create('a')},
   {name: "Charlie", email: "charlie@gmail.com", password_digest: BCrypt::Password.create('a')},
   {name: "Don", email: "don@gmail.com", password_digest: BCrypt::Password.create('a')},
@@ -106,7 +106,7 @@ Task.create!([
     description: "For your next task we're going to treat you to a type of art that many don't often associate with Wynwood or South Florida. To pass this next task, you'll need to figure
     out where to go and answer a question. Not far from where you are now, is a place that has a drink named after a curious collection of houses a mile off the Florida coast. Find the
     location and enter the name of that drink to move on to your next task. If you get to this location before the top of the hour, you can go on a free tour!",
-    answer: "Stiltville Pilsner",
+    answer: "Stiltsville Pilsner",
     quest_id: 1,
     clue1: "Drink Art, Make Beer!",
     clue2: "Circus clowns walk on these.",
@@ -173,7 +173,7 @@ Task.create!([
 Role.create!([
   {role: true, user_id: 1, quest_id: 1},
   {role: false, user_id: 2, quest_id: 1},
-  {role: false, user_id: 3, quest_id: 1},
+  # {role: false, user_id: 3, quest_id: 1},
   {role: false, user_id: 4, quest_id: 1},
   {role: true, user_id: 2, quest_id: 2},
   {role: false, user_id: 3, quest_id: 2},
