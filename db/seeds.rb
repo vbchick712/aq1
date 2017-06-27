@@ -32,7 +32,7 @@ User.create!([
 Quest.create!([
   {name: "Wynwood Quest",
     description: "This quest will take you around Wynwood to find things you never knew were there!",
-    start: "2017-06-24 1:30:00",
+    start: "2017-06-24 11:00:00",
     user_id: 1,
     invite_msg: "Are you ready for some adventure?! Well, charge up your phone and make sure you have plenty of memory to take some gorgeous photos as you explore Wynwood to complete
     this quest. You won't need anything special for this quest- just your smartphone, comfortable shoes, and money if you want to grab a snack along the way. I had fun making this-
@@ -86,8 +86,8 @@ Task.create!([
     clue1: "It's on the north side of the street.",
     clue2: "The building is solid black. If you see stripes- you've gone too far.",
     clue3: "The name is something like Siblings & Strikers.",
-    clue_timer: 2,
-    answer_check: true,
+    clue_timer: 4,
+    answer_check: false,
     answer_comment: "Awesome! You got it! This place is cool...head inside to check it out before you head on to your next task if you want.",
     skip_comment: "Really- this early in the quest you are already being lazy?! This is soooooo simple!!!!"},
   {name: "Colors Everywhere!!!",
@@ -173,8 +173,8 @@ Task.create!([
 Role.create!([
   {role: true, user_id: 1, quest_id: 1},
   {role: false, user_id: 2, quest_id: 1},
-  # {role: false, user_id: 3, quest_id: 1},
   {role: false, user_id: 4, quest_id: 1},
+  {role: false, user_id: 3, quest_id: 1},
   {role: true, user_id: 2, quest_id: 2},
   {role: false, user_id: 3, quest_id: 2},
   {role: false, user_id: 1, quest_id: 2},

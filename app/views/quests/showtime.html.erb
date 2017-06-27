@@ -7,7 +7,7 @@
 </div>
 
 <!-- Loop for totals tasks in a Quests -->
-<% @quest.tasks.each do |task| %>
+<% @quest.tasks.sort.each do |task| %>
  <div class="quest">
 	<div class="card">
     <div class="card-image waves-effect waves-block waves-light">
@@ -25,7 +25,7 @@
         <%= hidden_field_tag 'taskanswer', task.answer %>
         <%= hidden_field_tag 'timer', task.clue_timer %>
         <a href="#modal1" id="x" class="waves-effect waves-light btn indigo check_answer">check Answer </a>
-        
+
         <a href ="#modal_skip" class="btn waves-effect indigo waves-light skip-task " >Skip Task<i class="material-icons right">skip_next</i>
         </a>
       </div>
@@ -34,7 +34,7 @@
     <div class="modal-content skip">
       <%= image_tag 'wrong_answer_khart.gif', width: '252' %>
       <h4><%= task.skip_comment%></h4>
-      
+
     </div>
     <div class="modal-footer skip">
       <a href="#!" class="modal-action modal-close waves-effect waves-indigo btn-flat " >No, I will go on!</a>
@@ -48,8 +48,8 @@
       <p><%= task.clue1 %></p>
     </div>
   </div>
-  
- </div> 
+
+ </div>
  <!-- Modal Structure For right and wrong answers -->
   <div id="modal1" class="modal">
     <div class="modal-content right1">
@@ -65,15 +65,15 @@
       <h4>Too bad </h4>
       <p>That is not the correct answer try again</p>
     </div>
-    
+
     <div class="modal-footer wrong">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" >Ok</a>
     </div>
   </div>
 	<% end -%>
-  
+
   <a href="#" id="show_img" class="waves-effect indigo waves-light btn ">Start Quest </a>
-  
+
   <!-- Completing the quest Message -->
   <div class="message">
     <div class="card-image waves-effect waves-block waves-light">
@@ -85,7 +85,3 @@
   <!-- Link To quests index page -->
   <div class="home1234"><%= link_to 'Go to your Quests', quests_path, class: 'waves-effect waves-light btn indigo' %></div>
 </div>
-  
-  
-
-  

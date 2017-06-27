@@ -61,10 +61,8 @@ body {
 
   strong {
     font-weight: bold !important;
-    font-size: 18px !important;
+    /*font-size: 18px !important;*/
   }
-
-
 
 /*.picker__date-display {
 	background-color: gray;
@@ -77,6 +75,7 @@ body {
 	overflow: hidden;
 	z-index: -1;
 }
+
 .mobile-text{
 	color:black;
 	padding: 0 32px;
@@ -112,9 +111,11 @@ input[type=password]:focus:not([readonly]) {
 .col{
   background-color: rgba(255,255,255,0.60);
 }
+
 .collection{
   border: none;
 }
+
 .collection .collection-item{
   background-color: rgba(255,255,255,0.60);
 
