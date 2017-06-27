@@ -1,10 +1,10 @@
 <div class="container">
+<h4><%= @quest.name %></h4>
+Total Tasks: <%= @quest.tasks.count %>
 
-<h4>Edit Task</h4>
-
+<h5>Edit Task</h5>
 
 <%= form_with scope: :task, url: quest_task_path do |form| %>
-
 
   <div class="field">
     <%= form.label :name, "Task Name (Have fun & be clever!)" %>
@@ -58,7 +58,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit class:'btn waves-effect indigo' %>
+    <%= form.submit class:'btn waves-effect waves-light indigo' %>
     <%= link_to 'Show', quest_task_path(@task.quest, @task), class: 'waves-effect indigo btn' %>
     <%= link_to 'Return to Quest', quest_path(@quest), class: 'waves-effect indigo btn' %>
   </div>
